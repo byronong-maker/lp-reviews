@@ -10,67 +10,98 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{background:#F7F4EE;color:#241C18;font-family:'Open Sans',-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:44px 20px 60px}
+.wrap{max-width:760px;margin:0 auto;padding:44px 20px 60px}
 h1{font-size:1.7rem;font-weight:800;margin:0 0 6px}
-.sub{color:#7A7168;font-size:.95rem;margin:0 0 30px}
+.sub{color:#7A7168;font-size:.95rem;margin:0 0 26px}
+.tip{background:#FFF9EC;border:1px solid #F0E2C4;border-radius:12px;padding:14px 16px;color:#7A6540;font-size:.88rem;margin:0 0 28px}
 .card{display:block;background:#fff;border:1px solid #E6DFD4;border-radius:14px;padding:20px 22px;margin:0 0 14px;text-decoration:none;color:inherit;transition:.14s}
 .card:hover{border-color:#C9B79F;box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:5px}
 .brand{font-weight:800;font-size:1.12rem}
 .pill{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
 .review{background:#FDF0D9;color:#8A6212}
 .live{background:#E4F0E0;color:#3D6B33}
-.meta{color:#7A7168;font-size:.88rem;margin:0}
-.note{color:#8A8177;font-size:.82rem;margin:6px 0 0}
-.tip{background:#FFF9EC;border:1px solid #F0E2C4;border-radius:12px;padding:14px 16px;color:#7A6540;font-size:.88rem;margin:0 0 26px}
-.foot{color:#9A9186;font-size:.8rem;margin-top:34px;text-align:center}
+.meta{color:#7A7168;font-size:.88rem;margin:0 0 12px}
+.changes{margin:0;padding:0;list-style:none}
+.changes li{position:relative;padding-inline-start:22px;color:#4A443D;font-size:.86rem;margin:0 0 5px;line-height:1.5}
+.changes li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:9px;height:9px;border-radius:50%;background:#C9B79F}
+.changes li.open::before{background:#E0A32C}
+.open-note{color:#8A6212}
+.sect{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#A0968A;margin:30px 0 12px}
+.foot{color:#9A9186;font-size:.8rem;margin-top:36px;text-align:center;line-height:1.7}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <h1>Landing Page Reviews</h1>
-  <p class="sub">All current deliverables in one place. Click any card to open the page.</p>
+  <p class="sub">Every deliverable in one place, with what changed in the latest round. Click any card to open it.</p>
 
-  <div class="tip">Please view with browser translation turned off. Translation converts the Hebrew page text to English but leaves text inside graphics in Hebrew, so pages render half and half.</div>
+  <div class="tip">Please view with browser translation turned off. Translation converts the Hebrew page text to English but leaves text inside graphics in Hebrew, so pages render half English and half Hebrew and the graphics can look broken.</div>
 
-  <a class="card" href="astaxanthin-listicle.html">
-    <div class="top"><span class="brand">Elovate Astaxanthin</span><span class="pill review">For review</span></div>
-    <p class="meta">Listicle, 10 reasons. Hebrew RTL.</p>
-    <p class="note">Round 2 punch-list applied: mechanism graphics on reasons 4, 5, 8 and 9, research excerpt card, new product shot, checkout wired.</p>
-  </a>
+  <div class="sect">Updated this round</div>
 
   <a class="card" href="carrier-minimax-listicle.html">
     <div class="top"><span class="brand">Carrier MiniMax</span><span class="pill review">For review</span></div>
     <p class="meta">Listicle, 5 reasons. Hebrew RTL.</p>
-    <p class="note">Round 2 applied: CTA is now a swipeable slideshow of all 29 colours with Hebrew names, repointed to try-carrier with shekel pricing, second bag at 50% off verified live at checkout, and the returns wording corrected to the real 14 day policy.</p>
+    <ul class="changes">
+      <li>CTA image is now a swipeable slideshow of all 29 colours, with the Hebrew colour names taken from the product page</li>
+      <li>Second bag changed from free to 50% off, verified live at checkout</li>
+      <li>Repointed to try-carrier with shekel pricing, 215 per bag, 319 for two</li>
+      <li>Returns wording corrected to the real 14 day policy</li>
+    </ul>
+  </a>
+
+  <a class="card" href="astaxanthin-listicle.html">
+    <div class="top"><span class="brand">Elovate Astaxanthin</span><span class="pill review">For review</span></div>
+    <p class="meta">Listicle, 10 reasons. Hebrew RTL.</p>
+    <ul class="changes">
+      <li>Reason 1 before and after rebuilt as two genuinely separate photographs, different pose, hair, top and light</li>
+      <li>Mechanism images on reasons 4, 5, 8 and 9 showing what happens in the body</li>
+      <li>Research excerpt card added under the vitamin C and E comparison</li>
+      <li>Clean product shot at the offer, and the buy button goes straight to checkout</li>
+    </ul>
   </a>
 
   <a class="card" href="moody-quiz.html">
     <div class="top"><span class="brand">Moody</span><span class="pill review">For review</span></div>
     <p class="meta">Calm and Focus quiz funnel, 12 screens. Hebrew RTL.</p>
-    <p class="note">Round 2 applied: photo answer options on questions 1, 5 and 6, progress loaders on both seed screens, and a three tier bundle picker with prices verified at checkout. Awaiting Meta Pixel ID and subdomain to go live.</p>
+    <ul class="changes">
+      <li>Photo answer options on question 1, one child per age group</li>
+      <li>Photo answer options on questions 5 and 6, each one showing the situation described</li>
+      <li>Progress loader on both "did you know" screens, so the profile is visibly being built</li>
+      <li>Three tier bundle picker at the CTA, 149 / 298 / 447, verified at checkout</li>
+      <li class="open"><span class="open-note">Still needed from you: the Meta Pixel ID and the subdomain</span></li>
+    </ul>
   </a>
+
+  <div class="sect">Already live</div>
 
   <a class="card" href="https://trywetwise.com/pages/10-reasons-listical-gummies">
     <div class="top"><span class="brand">Moody</span><span class="pill live">Live</span></div>
     <p class="meta">Listicle, 10 reasons. Hebrew RTL.</p>
-    <p class="note">Live on the store.</p>
+    <ul class="changes">
+      <li class="open"><span class="open-note">Prices on the page say 189 / 378 / 567, the store now charges 149 / 298 / 447. Worth updating.</span></li>
+    </ul>
   </a>
 
   <a class="card" href="https://trywetwise.com/pages/moody-advertorial">
     <div class="top"><span class="brand">Moody</span><span class="pill live">Live</span></div>
     <p class="meta">Advertorial, first person story. Hebrew RTL.</p>
-    <p class="note">Live on the store.</p>
+    <ul class="changes">
+      <li class="open"><span class="open-note">Same price mismatch as the listicle.</span></li>
+    </ul>
   </a>
 
   <a class="card" href="https://quiz.lyonrise.com">
     <div class="top"><span class="brand">LyonRise LymphFlow</span><span class="pill live">Live</span></div>
     <p class="meta">Men's quiz funnel. Hebrew RTL.</p>
-    <p class="note">Live on its own subdomain.</p>
+    <ul class="changes">
+      <li>Live on its own subdomain</li>
+    </ul>
   </a>
 
-  <p class="foot">Built by Byron Ong</p>
+  <p class="foot">Built by Byron Ong<br>Amber dots mark items still open</p>
 
 </div>
 </body>
