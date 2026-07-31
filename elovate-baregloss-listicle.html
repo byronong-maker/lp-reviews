@@ -280,7 +280,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
       <a class="bundle" data-qty="1" href="#">
         <div class="bl">
           <div class="bname">יחידה אחת</div>
-          <div class="bsub">משלוח מהיר עד הבית</div>
+          <div class="bsub">משלוח חינם עד הבית</div>
         </div>
         <div class="br"><div class="bp">139 ש"ח</div><div class="bwas">199 ש"ח</div></div>
       </a>
@@ -288,7 +288,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
         <span class="tag">הנמכר ביותר</span>
         <div class="bl">
           <div class="bname">קני 2 קבלי 1 מתנה</div>
-          <div class="bsub">שלוש יחידות · משלוח מהיר עד הבית</div>
+          <div class="bsub">שלוש יחידות · משלוח חינם עד הבית</div>
         </div>
         <div class="br"><div class="bp">278 ש"ח</div><div class="bwas">597 ש"ח</div></div>
       </a>
@@ -296,7 +296,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
         <span class="tag">המשתלם ביותר</span>
         <div class="bl">
           <div class="bname">קני 3 קבלי 2 מתנה</div>
-          <div class="bsub">חמש יחידות · משלוח מהיר עד הבית</div>
+          <div class="bsub">חמש יחידות · משלוח חינם עד הבית</div>
         </div>
         <div class="br"><div class="bp">417 ש"ח</div><div class="bwas">995 ש"ח</div></div>
       </a>
@@ -342,9 +342,11 @@ const CONFIG = {
   PRODUCT_URL:'https://tryelovate.com/products/elovate-baregloss',
   VARIANT_ID:'44075416256590',
   BUNDLE_QTY:3, DISCOUNT:'', PIXEL_ID:'',
-  /* Subscribe and save 20%, the 1x deal bar's selling plan on the product page.
-     NOT yet click-tested: Cloudflare rate-limited the check. Verify once before publish. */
-  SELLING_PLAN:'2887155790'
+  /* Subscribe and save 20% is a Kaching selling plan and does NOT attach via a cart permalink.
+     Click-tested 2026-08-01: /cart/44075416256590:1?selling_plan=2887155790 reached checkout at
+     the full 139 with no plan on the line. Left empty on purpose so the subscription row falls
+     back to the product page, where the widget can actually apply it. */
+  SELLING_PLAN:''
 };
 /* Tomer confirmed 2026-08-01: go straight to checkout, not the product page.
    The 2+1 and 3+2 offers are Kaching Bundles deal bars, but the discount lands as an
