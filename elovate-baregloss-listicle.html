@@ -112,6 +112,14 @@ h1.title .pay{color:var(--berry-d);display:block;margin-top:6px}
 .bundle .tag{position:absolute;top:-10px;right:14px;background:var(--berry);color:#fff;
   font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.02em}
 .bundle.best .tag{background:var(--gold);color:#3A2A10}
+
+/* Subscribe and save, the selling plan that runs on the product page. */
+.subopt{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right;
+  background:var(--tag-bg);border:1px dashed var(--gold);border-radius:12px;
+  padding:12px 16px;margin:0 0 16px;text-decoration:none;color:inherit}
+.subopt .sname{font-weight:800;font-size:.98rem;color:var(--ink)}
+.subopt .ssub{color:var(--muted);font-size:.83rem;line-height:1.5}
+.subopt .sgo{flex:0 0 auto;color:var(--berry-d);font-weight:800;font-size:.9rem;white-space:nowrap}
 .cta{display:inline-block;background:var(--berry);color:#fff;font-weight:800;font-size:1.12rem;text-decoration:none;padding:16px 32px;border-radius:999px;box-shadow:0 6px 16px rgba(178,51,43,.30);transition:transform .1s,background .15s}
 .cta:hover{background:var(--berry-d);transform:translateY(-1px)}
 .guar{margin-top:14px;color:var(--muted);font-size:.86rem}
@@ -274,7 +282,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
           <div class="bname">יחידה אחת</div>
           <div class="bsub">משלוח מהיר עד הבית</div>
         </div>
-        <div class="br"><div class="bp">139 ש"ח</div></div>
+        <div class="br"><div class="bp">139 ש"ח</div><div class="bwas">199 ש"ח</div></div>
       </a>
       <a class="bundle" data-qty="3" href="#">
         <span class="tag">הנמכר ביותר</span>
@@ -282,7 +290,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
           <div class="bname">קני 2 קבלי 1 מתנה</div>
           <div class="bsub">שלוש יחידות · משלוח מהיר עד הבית</div>
         </div>
-        <div class="br"><div class="bp">278 ש"ח</div><div class="bwas">417 ש"ח</div></div>
+        <div class="br"><div class="bp">278 ש"ח</div><div class="bwas">597 ש"ח</div></div>
       </a>
       <a class="bundle best" data-qty="5" href="#">
         <span class="tag">המשתלם ביותר</span>
@@ -290,9 +298,16 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
           <div class="bname">קני 3 קבלי 2 מתנה</div>
           <div class="bsub">חמש יחידות · משלוח מהיר עד הבית</div>
         </div>
-        <div class="br"><div class="bp">417 ש"ח</div><div class="bwas">695 ש"ח</div></div>
+        <div class="br"><div class="bp">417 ש"ח</div><div class="bwas">995 ש"ח</div></div>
       </a>
     </div>
+    <a class="subopt" id="subOpt" href="#">
+      <div class="sl">
+        <div class="sname">מעדיפה מנוי מתחדש? 20% הנחה</div>
+        <div class="ssub">היחידה נשלחת אליך אוטומטית · ניתן לבטל בכל עת</div>
+      </div>
+      <div class="sgo">לבחירה ←</div>
+    </a>
     <div class="pricebox">
       <div class="ps">ניסיון ללא סיכון למשך 30 יום</div>
     </div>
@@ -326,7 +341,10 @@ const CONFIG = {
   STORE:'https://tryelovate.com',
   PRODUCT_URL:'https://tryelovate.com/products/elovate-baregloss',
   VARIANT_ID:'44075416256590',
-  BUNDLE_QTY:3, DISCOUNT:'', PIXEL_ID:''
+  BUNDLE_QTY:3, DISCOUNT:'', PIXEL_ID:'',
+  /* Subscribe and save 20%, the 1x deal bar's selling plan on the product page.
+     NOT yet click-tested: Cloudflare rate-limited the check. Verify once before publish. */
+  SELLING_PLAN:'2887155790'
 };
 /* Tomer confirmed 2026-08-01: go straight to checkout, not the product page.
    The 2+1 and 3+2 offers are Kaching Bundles deal bars, but the discount lands as an
@@ -361,6 +379,20 @@ document.addEventListener('DOMContentLoaded', function(){
       if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS', num_items:q});
     });
   });
+
+  /* Subscription goes to the same checkout with the selling plan attached.
+     Falls back to the product page if the plan id is ever cleared. */
+  var so = document.getElementById('subOpt');
+  if(so){
+    so.setAttribute('href',
+      CONFIG.SELLING_PLAN
+        ? CONFIG.STORE.replace(/\/$/,'') + '/cart/' + CONFIG.VARIANT_ID + ':1'
+          + '?selling_plan=' + CONFIG.SELLING_PLAN + '&return_to=/checkout'
+        : CONFIG.PRODUCT_URL);
+    so.addEventListener('click', function(){
+      if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS', num_items:1});
+    });
+  }
 
   var tv = document.getElementById('offerTimer');
   if(tv){
