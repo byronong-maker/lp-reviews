@@ -97,6 +97,21 @@ h1.title .pay{color:var(--berry-d);display:block;margin-top:6px}
 .pricebox{background:var(--berry-soft);border-radius:14px;padding:16px;margin:0 0 18px}
 .pricebox .pv{font-weight:900;font-size:1.9rem;color:var(--berry-d);direction:ltr;unicode-bidi:isolate}
 .pricebox .ps{color:var(--muted);font-size:.9rem}
+
+/* Bundle tiers, mirroring the three deal bars on the Elovate product page. */
+.bundles{display:grid;gap:10px;margin:0 0 16px;text-align:right}
+.bundle{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px 16px;
+  text-decoration:none;color:inherit}
+.bundle.best{border-color:var(--berry);background:#FFFDFD}
+.bundle .bl .bname{font-weight:900;font-size:1.06rem;color:var(--ink);line-height:1.35}
+.bundle .bl .bsub{color:var(--muted);font-size:.85rem;line-height:1.5}
+.bundle .br{text-align:left;flex:0 0 auto;direction:ltr;unicode-bidi:isolate}
+.bundle .br .bp{font-weight:900;font-size:1.25rem;color:var(--berry-d);white-space:nowrap}
+.bundle .br .bwas{color:var(--muted);font-size:.85rem;text-decoration:line-through;white-space:nowrap}
+.bundle .tag{position:absolute;top:-10px;right:14px;background:var(--berry);color:#fff;
+  font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.02em}
+.bundle.best .tag{background:var(--gold);color:#3A2A10}
 .cta{display:inline-block;background:var(--berry);color:#fff;font-weight:800;font-size:1.12rem;text-decoration:none;padding:16px 32px;border-radius:999px;box-shadow:0 6px 16px rgba(178,51,43,.30);transition:transform .1s,background .15s}
 .cta:hover{background:var(--berry-d);transform:translateY(-1px)}
 .guar{margin-top:14px;color:var(--muted);font-size:.86rem}
@@ -253,8 +268,32 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
     <div class="timer"><span class="tl">ההטבה בתוקף עד חצות:</span><span class="tv" id="offerTimer">00:00:00</span></div>
     <h3>קרם טריפל אקטיב להחלקת עור תות</h3>
     <p class="price">118 מ"ל · ללא בישום · לא קומדוגני</p>
+    <div class="bundles" id="bundles">
+      <a class="bundle" data-qty="1" href="#">
+        <div class="bl">
+          <div class="bname">יחידה אחת</div>
+          <div class="bsub">משלוח מהיר עד הבית</div>
+        </div>
+        <div class="br"><div class="bp">139 ש"ח</div></div>
+      </a>
+      <a class="bundle" data-qty="3" href="#">
+        <span class="tag">הנמכר ביותר</span>
+        <div class="bl">
+          <div class="bname">קני 2 קבלי 1 מתנה</div>
+          <div class="bsub">שלוש יחידות · משלוח מהיר עד הבית</div>
+        </div>
+        <div class="br"><div class="bp">278 ש"ח</div><div class="bwas">417 ש"ח</div></div>
+      </a>
+      <a class="bundle best" data-qty="5" href="#">
+        <span class="tag">המשתלם ביותר</span>
+        <div class="bl">
+          <div class="bname">קני 3 קבלי 2 מתנה</div>
+          <div class="bsub">חמש יחידות · משלוח מהיר עד הבית</div>
+        </div>
+        <div class="br"><div class="bp">417 ש"ח</div><div class="bwas">695 ש"ח</div></div>
+      </a>
+    </div>
     <div class="pricebox">
-      <div class="pv">139 ש"ח</div>
       <div class="ps">ניסיון ללא סיכון למשך 30 יום</div>
     </div>
     <a class="cta" href="https://tryelovate.com/products/elovate-baregloss" id="buyCta">להזמנת BareGloss ←</a>
@@ -277,7 +316,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
 </div>
 
 <div class="buybar" id="buybar">
-  <div class="bt">Elovate BareGloss<span>139 ש"ח · 30 יום ללא סיכון</span></div>
+  <div class="bt">Elovate BareGloss<span>החל מ-139 ש"ח · 30 יום ללא סיכון</span></div>
   <a href="#offer">לפרטים ←</a>
 </div>
 
@@ -287,16 +326,21 @@ const CONFIG = {
   STORE:'https://tryelovate.com',
   PRODUCT_URL:'https://tryelovate.com/products/elovate-baregloss',
   VARIANT_ID:'44075416256590',
-  BUNDLE_QTY:1, DISCOUNT:'', PIXEL_ID:''
+  BUNDLE_QTY:3, DISCOUNT:'', PIXEL_ID:''
 };
-/* CTA target: product page, matching the pattern Daniel asked for on Carrier.
-   Switch to checkoutUrl() if Tomer confirms he wants straight to checkout. */
-function checkoutUrl(){
+/* Tomer confirmed 2026-08-01: go straight to checkout, not the product page.
+   The 2+1 and 3+2 offers are Kaching Bundles deal bars, but the discount lands as an
+   automatic line-level discount, so a plain cart permalink still gets the free units.
+   Verified against the live store: :1 = 139, :3 = 278, :5 = 417.
+   return_to=/checkout skips the cart page and opens the Hebrew checkout directly. */
+function checkoutUrl(qty){
+  var q = qty || CONFIG.BUNDLE_QTY || 1;
   if(CONFIG.STORE && CONFIG.VARIANT_ID)
-    return CONFIG.STORE.replace(/\/$/,'') + '/cart/' + CONFIG.VARIANT_ID + ':' + CONFIG.BUNDLE_QTY + (CONFIG.DISCOUNT ? '?discount=' + CONFIG.DISCOUNT : '');
+    return CONFIG.STORE.replace(/\/$/,'') + '/cart/' + CONFIG.VARIANT_ID + ':' + q
+         + '?return_to=/checkout' + (CONFIG.DISCOUNT ? '&discount=' + CONFIG.DISCOUNT : '');
   return CONFIG.PRODUCT_URL || '';
 }
-function ctaTarget(){ return CONFIG.PRODUCT_URL || checkoutUrl(); }
+function ctaTarget(){ return checkoutUrl(CONFIG.BUNDLE_QTY); }
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -306,6 +350,15 @@ document.addEventListener('DOMContentLoaded', function(){
     a.setAttribute('href', ctaTarget());
     a.addEventListener('click', function(){
       if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS'});
+    });
+  });
+
+  /* Each bundle row is its own checkout link at its own quantity. */
+  document.querySelectorAll('a.bundle').forEach(function(a){
+    var q = parseInt(a.getAttribute('data-qty'), 10) || 1;
+    a.setAttribute('href', checkoutUrl(q));
+    a.addEventListener('click', function(){
+      if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS', num_items:q});
     });
   });
 
