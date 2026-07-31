@@ -387,7 +387,7 @@ footer b{color:var(--ink2)}
         <p class="cs-hint">החליקו לצדדים כדי לראות את כל הדגמים</p>
       </div>
     <div class="kick">הטבה מיוחדת</div>
-    <div class="timer"><span class="tl">ההטבה שמורה עבורך למשך:</span><span class="tv" id="offerTimer">15:00</span></div>
+    <div class="timer"><span class="tl">ההטבה בתוקף עד חצות:</span><span class="tv" id="offerTimer">00:00:00</span></div>
     <h3>תיק שני ב-50% הנחה</h3>
     <p class="price">215 ש"ח לתיק. השני ב-104 ש"ח בלבד, סה"כ 319 ש"ח לשניים כולל משלוח חינם.</p>
     <p class="scarcity">כמה צבעים כבר אזלו, שווה לבדוק מה נשאר</p>
@@ -440,9 +440,18 @@ function checkoutUrl(){
 }
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('a.cta, a.cta-sm').forEach(function(a){ var h=a.getAttribute('href'); if(h==='#offer'||h==='#quiz') return; a.setAttribute('href',checkoutUrl()); a.addEventListener('click',function(){ this.setAttribute('href',checkoutUrl()); if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS'}); }); });
-  var tv=document.getElementById('offerTimer');
-  if(tv){ var end=parseInt(sessionStorage.getItem('carrierOfferEnd')||'0',10); if(!end||end<Date.now()){ end=Date.now()+15*60*1000; sessionStorage.setItem('carrierOfferEnd',String(end)); }
-    setInterval(function(){ var s=Math.max(0,Math.round((end-Date.now())/1000)); if(s===0){ end=Date.now()+15*60*1000; sessionStorage.setItem('carrierOfferEnd',String(end)); } var m=Math.floor(s/60),r=s%60; tv.textContent=(m<10?'0':'')+m+':'+(r<10?'0':'')+r; },500); }
+  var tv = document.getElementById('offerTimer');
+  if(tv){
+    /* Runs to midnight so it lines up with the store's own countdown bar. */
+    var nextMidnight = function(){ var d=new Date(); d.setHours(24,0,0,0); return d.getTime(); };
+    var end = nextMidnight();
+    setInterval(function(){
+      var s = Math.max(0, Math.round((end - Date.now())/1000));
+      if(s <= 0){ end = nextMidnight(); s = Math.round((end - Date.now())/1000); }
+      var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), r = s%60;
+      tv.textContent = (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(r<10?'0':'')+r;
+    },500);
+  }
   var els=[].slice.call(document.querySelectorAll('.reason,.pull,.fullimg,.tcard,.gallery,.moody-quiz,.offer,.faq'));
   els.forEach(function(e){ e.classList.add('reveal'); });
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'}); els.forEach(function(e){io.observe(e)}); } else { els.forEach(function(e){e.classList.add('in')}); }
