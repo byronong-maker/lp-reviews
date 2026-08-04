@@ -98,20 +98,28 @@ h1.title .pay{color:var(--berry-d);display:block;margin-top:6px}
 .pricebox .pv{font-weight:900;font-size:1.9rem;color:var(--berry-d);direction:ltr;unicode-bidi:isolate}
 .pricebox .ps{color:var(--muted);font-size:.9rem}
 
-/* Bundle tiers, mirroring the three deal bars on the Elovate product page. */
+/* Bundle tiers, mirroring the three deal bars on the Elovate product page.
+   These SELECT a quantity, they do not navigate. Only the CTA goes to checkout. */
 .bundles{display:grid;gap:10px;margin:0 0 16px;text-align:right}
 .bundle{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;
   background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px 16px;
-  text-decoration:none;color:inherit}
-.bundle.best{border-color:var(--berry);background:#FFFDFD}
-.bundle .bl .bname{font-weight:900;font-size:1.06rem;color:var(--ink);line-height:1.35}
-.bundle .bl .bsub{color:var(--muted);font-size:.85rem;line-height:1.5}
+  color:inherit;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.bundle:hover{border-color:var(--berry-soft)}
+.bundle.sel{border-color:var(--berry);background:#FFFDFD}
+.bundle .bl{display:flex;align-items:center;gap:11px}
+.bundle .radio{flex:0 0 auto;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);
+  background:#fff;display:grid;place-items:center}
+.bundle.sel .radio{border-color:var(--berry)}
+.bundle .radio i{width:10px;height:10px;border-radius:50%;background:transparent;display:block}
+.bundle.sel .radio i{background:var(--berry)}
+.bundle .bname{font-weight:900;font-size:1.06rem;color:var(--ink);line-height:1.35}
+.bundle .bsub{color:var(--muted);font-size:.85rem;line-height:1.5}
 .bundle .br{text-align:left;flex:0 0 auto;direction:ltr;unicode-bidi:isolate}
 .bundle .br .bp{font-weight:900;font-size:1.25rem;color:var(--berry-d);white-space:nowrap}
 .bundle .br .bwas{color:var(--muted);font-size:.85rem;text-decoration:line-through;white-space:nowrap}
 .bundle .tag{position:absolute;top:-10px;right:14px;background:var(--berry);color:#fff;
   font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.02em}
-.bundle.best .tag{background:var(--gold);color:#3A2A10}
+.bundle.gold .tag{background:var(--gold);color:#3A2A10}
 
 /* Subscribe and save, the selling plan that runs on the product page. */
 .subopt{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right;
@@ -277,29 +285,38 @@ footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);f
     <h3>קרם טריפל אקטיב להחלקת עור תות</h3>
     <p class="price">118 גרם · ללא בישום · לא קומדוגני</p>
     <div class="bundles" id="bundles">
-      <a class="bundle" data-qty="1" href="#">
+      <div class="bundle" data-qty="1" role="button" tabindex="0" aria-pressed="false">
         <div class="bl">
-          <div class="bname">יחידה אחת</div>
-          <div class="bsub">משלוח חינם עד הבית</div>
+          <span class="radio"><i></i></span>
+          <div>
+            <div class="bname">יחידה אחת</div>
+            <div class="bsub">משלוח חינם עד הבית</div>
+          </div>
         </div>
         <div class="br"><div class="bp">139 ש"ח</div><div class="bwas">199 ש"ח</div></div>
-      </a>
-      <a class="bundle" data-qty="3" href="#">
+      </div>
+      <div class="bundle sel" data-qty="3" role="button" tabindex="0" aria-pressed="true">
         <span class="tag">הנמכר ביותר</span>
         <div class="bl">
-          <div class="bname">קני 2 קבלי 1 מתנה</div>
-          <div class="bsub">שלוש יחידות · משלוח חינם עד הבית</div>
+          <span class="radio"><i></i></span>
+          <div>
+            <div class="bname">קני 2 קבלי 1 מתנה</div>
+            <div class="bsub">שלוש יחידות · משלוח חינם עד הבית</div>
+          </div>
         </div>
         <div class="br"><div class="bp">278 ש"ח</div><div class="bwas">597 ש"ח</div></div>
-      </a>
-      <a class="bundle best" data-qty="5" href="#">
+      </div>
+      <div class="bundle gold" data-qty="5" role="button" tabindex="0" aria-pressed="false">
         <span class="tag">המשתלם ביותר</span>
         <div class="bl">
-          <div class="bname">קני 3 קבלי 2 מתנה</div>
-          <div class="bsub">חמש יחידות · משלוח חינם עד הבית</div>
+          <span class="radio"><i></i></span>
+          <div>
+            <div class="bname">קני 3 קבלי 2 מתנה</div>
+            <div class="bsub">חמש יחידות · משלוח חינם עד הבית</div>
+          </div>
         </div>
         <div class="br"><div class="bp">417 ש"ח</div><div class="bwas">995 ש"ח</div></div>
-      </a>
+      </div>
     </div>
     <a class="subopt" id="subOpt" href="#">
       <div class="sl">
@@ -373,14 +390,31 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  /* Each bundle row is its own checkout link at its own quantity. */
-  document.querySelectorAll('a.bundle').forEach(function(a){
-    var q = parseInt(a.getAttribute('data-qty'), 10) || 1;
-    a.setAttribute('href', checkoutUrl(q));
-    a.addEventListener('click', function(){
-      if(window.fbq) fbq('track','InitiateCheckout',{currency:'ILS', num_items:q});
+  /* Bundle rows select a quantity. They must NOT navigate: Tomer reported that
+     changing the amount jumped straight to checkout. Only the CTA below goes there,
+     and it always carries whichever tier is currently selected. */
+  var bundles = document.querySelectorAll('.bundle');
+  var buyCta  = document.getElementById('buyCta');
+
+  function selectBundle(el){
+    bundles.forEach(function(b){
+      var on = (b === el);
+      b.classList.toggle('sel', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    CONFIG.BUNDLE_QTY = parseInt(el.getAttribute('data-qty'), 10) || 1;
+    if(buyCta) buyCta.setAttribute('href', checkoutUrl(CONFIG.BUNDLE_QTY));
+  }
+
+  bundles.forEach(function(b){
+    b.addEventListener('click', function(){ selectBundle(b); });
+    b.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); selectBundle(b); }
     });
   });
+
+  var preselected = document.querySelector('.bundle.sel');
+  if(preselected) selectBundle(preselected);
 
   /* Subscription goes to the same checkout with the selling plan attached.
      Falls back to the product page if the plan id is ever cleared. */
