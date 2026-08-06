@@ -496,9 +496,11 @@ document.addEventListener('DOMContentLoaded', function(){
         var n = Array.prototype.filter.call(boxes, function(x){ return x.checked; }).length;
         if(n === 0){ res.classList.remove('show'); return; }
         var txt;
-        if(n <= 2) txt = 'גם אצלי זה התחיל בשניים. הסיבה השלישית למטה היא זאת שלא חשבתי עליה.';
-        else if(n <= 4) txt = 'זה בערך מה שסימנתי גם אני לפני שנה. שווה לך לקרוא במיוחד את סיבה 3.';
-        else txt = 'סימנת כמעט הכל. אצלי כל אלה היו קשורים לדבר אחד, והוא מופיע בסיבה 3.';
+        /* Must point FORWARD. The quiz sits after reason 5, so reason 6 is the next
+           section down and it is the mechanism. Tomer caught this pointing back at 3. */
+        if(n <= 2) txt = 'גם אצלי זה התחיל בשניים. סיבה 6 למטה היא זאת שלא חשבתי עליה.';
+        else if(n <= 4) txt = 'זה בערך מה שסימנתי גם אני לפני שנה. שווה לך לקרוא במיוחד את סיבה 6.';
+        else txt = 'סימנת כמעט הכל. אצלי כל אלה היו קשורים לדבר אחד, והוא מופיע בסיבה 6.';
         res.querySelector('.cnum').textContent = 'סימנת ' + n + ' מתוך 6';
         res.querySelector('.ctxt').textContent = txt;
         res.classList.add('show');
