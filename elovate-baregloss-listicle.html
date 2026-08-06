@@ -15,6 +15,15 @@
   --line:#EADFD2; --berry:#B2332B; --berry-d:#8C2A24; --berry-soft:#FBEAE7;
   --gold:#C6913F; --tag-bg:#F4EAE0;
 }
+/* Tomer asked to strip the store chrome so the page stands alone.
+   Targets the theme's own section wrappers only. The theme footer is
+   <footer class="footer">, ours is a bare <footer>, so this must never be a
+   plain `footer{display:none}` or it takes our disclaimer with it.
+   Inert outside Shopify, so the review build is unaffected. */
+[id^="shopify-section-sections--"][id$="__header"],
+[id^="shopify-section-sections--"][id$="__footer"],
+.header-wrapper, .shopify-section-header, .shopify-section-footer{display:none!important}
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:'Open Sans',-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased;font-size:18px}
