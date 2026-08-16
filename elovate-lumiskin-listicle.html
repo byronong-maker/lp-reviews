@@ -17,6 +17,11 @@
 [id^="shopify-section-sections--"][id$="__footer"],
 .header-wrapper, .shopify-section-header, .shopify-section-footer{display:none!important}
 
+/* The theme also renders a newsletter signup after the page content. It sits on
+   the template, not in sections--, so the rule above does not reach it.
+   Tomer asked for it gone, 2026-08-16. */
+[id^="shopify-section-"][id$="__newsletter"]{display:none!important}
+
 /* Elovate's own palette, taken from their theme and their Kaching widget config:
    peach #FFC5A6 for buttons, borders, labels and badges, always with BLACK text on it,
    #121212 type, near-white backgrounds. Not invented, matched to the store. */
@@ -116,7 +121,7 @@ a.cta{display:inline-block;background:var(--peach);color:#121212;text-decoration
   transition:border-color .15s ease,background .15s ease;text-align:center}
 .shadeopt:hover{border-color:var(--peach-line)}
 .shadeopt.sel{border-color:var(--peach);background:#FFFDFD}
-.shadeopt .sw{width:100%;height:34px;border-radius:8px;margin-bottom:7px;border:1px solid rgba(0,0,0,.07)}
+.shadeopt .sw{width:100%;height:58px;border-radius:8px;margin-bottom:8px;border:1px solid rgba(0,0,0,.14);box-shadow:inset 0 -1px 3px rgba(0,0,0,.06)}
 .shadeopt .sname{font-weight:800;font-size:.86rem;display:block;line-height:1.35}
 
 .bundles{display:grid;gap:9px;margin:0 0 16px;text-align:right}
@@ -321,17 +326,17 @@ body{padding-bottom:74px}
     <div class="steplab">1 · בחרי גוון</div>
     <div class="shades" id="shades">
       <div class="shadeopt" data-variant="44094118133838" role="button" tabindex="0" aria-pressed="false">
-        <div class="sw" style="background:#F0DCC6"></div><span class="sname">שנהב</span></div>
+        <div class="sw" style="background:#EADED0"></div><span class="sname">שנהב</span></div>
       <div class="shadeopt sel" data-variant="44094118166606" role="button" tabindex="0" aria-pressed="true">
-        <div class="sw" style="background:#E8C6A4"></div><span class="sname">שקד דבש</span></div>
+        <div class="sw" style="background:#E4CFB2"></div><span class="sname">שקד דבש</span></div>
       <div class="shadeopt" data-variant="44094118199374" role="button" tabindex="0" aria-pressed="false">
-        <div class="sw" style="background:#DFB388"></div><span class="sname">חם</span></div>
+        <div class="sw" style="background:#D9BF9E"></div><span class="sname">חם</span></div>
       <div class="shadeopt" data-variant="44094118232142" role="button" tabindex="0" aria-pressed="false">
-        <div class="sw" style="background:#CE9A66"></div><span class="sname">זוהר קרמל</span></div>
+        <div class="sw" style="background:#CFAE85"></div><span class="sname">זוהר קרמל</span></div>
       <div class="shadeopt" data-variant="44094118264910" role="button" tabindex="0" aria-pressed="false">
-        <div class="sw" style="background:#A9713F"></div><span class="sname">חום ברונטי</span></div>
+        <div class="sw" style="background:#C3A487"></div><span class="sname">חום ברונטי</span></div>
       <div class="shadeopt" data-variant="44094118297678" role="button" tabindex="0" aria-pressed="false">
-        <div class="sw" style="background:#6E4326"></div><span class="sname">מוקה עמוק</span></div>
+        <div class="sw" style="background:#96745B"></div><span class="sname">מוקה עמוק</span></div>
     </div>
 
     <div class="steplab">2 · בחרי כמות</div>
