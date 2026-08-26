@@ -141,6 +141,26 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0 50px;font
   .beat{font-size:19px}
   .shift{font-size:20px}
 }
+
+/* ---- sticky buy bar. Same pattern as the approved Moody page:
+        fixed to the bottom, slides up once the reader is past the
+        hero, offer line plus guarantee, anchors to the offer. ---- */
+.buybar{position:fixed;bottom:0;left:0;right:0;background:#fff;
+  border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.10);
+  padding:10px 14px;display:flex;align-items:center;justify-content:center;
+  gap:18px;z-index:60;transform:translateY(120%);transition:transform .3s ease}
+.buybar.show{transform:none}
+.buybar .bt{font-size:15px;font-weight:700;line-height:1.35}
+.buybar .bt span{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+.buybar a{background:var(--ink);color:#fff;text-decoration:none;
+  font-size:16px;font-weight:800;padding:11px 20px;white-space:nowrap}
+@media(max-width:640px){
+  .buybar{gap:12px;padding:9px 12px}
+  .buybar .bt{font-size:13px}
+  .buybar a{font-size:15px;padding:10px 16px}
+  footer{padding-bottom:90px}
+}
+footer{padding-bottom:90px}
 </style>
 </head>
 <body>
@@ -433,6 +453,28 @@ var CONFIG = {
     }
   }
   [].forEach.call(box, function(b){ b.addEventListener('change', upd); });
+})();
+</script>
+
+<div class="buybar" id="buybar">
+  <div class="bt">30% הנחה · ₪98 במקום ₪140<span>אחריות 30 יום</span></div>
+  <a href="#offer">להזמנה ←</a>
+</div>
+
+<script>
+/* reveal the buy bar once the reader is past the hero, hide it again
+   when the offer block itself is on screen so it never covers the CTA */
+(function(){
+  var bar=document.getElementById('buybar'),offer=document.getElementById('offer');
+  function upd(){
+    var past=window.scrollY>700;
+    var r=offer.getBoundingClientRect();
+    var offerVisible=r.top<window.innerHeight && r.bottom>0;
+    bar.className='buybar'+(past && !offerVisible?' show':'');
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  upd();
 })();
 </script>
 </body>
