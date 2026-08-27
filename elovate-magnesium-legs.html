@@ -143,7 +143,7 @@ footer{padding-bottom:90px}
 </head>
 <body>
 
-<div class="topbar">30% הנחה <b>·</b> המבצע בתוקף עד חצות</div>
+<div class="topbar">₪149 במקום ₪199 <b>·</b> המבצע בתוקף עד חצות</div>
 
 <div class="masthead">
   <div class="mark">בריאות פשוטה</div>
@@ -371,10 +371,16 @@ var CONFIG = {
   productUrl: 'https://tryelovate.com/products/elovate-magnesium-bisglycinate-gummies',
   domain: 'tryelovate.com',
   variant: '44173953204302',
-  /* VERIFIED IN-CART 26 Aug: flat 98 per unit at qty 1-6. No real
-     tiers yet. Never add a tier that has not been click-tested. */
+  /* VERIFIED ON THE LIVE PRODUCT PAGE 28 Aug, read off the Kaching widget.
+     Flat 149 a unit at every tier. The value in the bundles is the GIFTS,
+     not a price cut, so never imply a saving that is not there.
+     3 packs carries 2 gifts: Elovate D3 + K2 gummies, and free shipping.
+     Every CTA goes to the PRODUCT PAGE because the widget adds the gift
+     there. It does not fire on a cart permalink, tested at qty 1 to 6. */
   tiers: [
-    { qty:1, label:'מארז אחד', sub:'30 מנות · חודש שלם', now:98, was:140, badge:'', sel:true }
+    { qty:3, label:'קני 3 מארזים וקבלי מתנה', sub:'2 מתנות כלולות', now:447, was:737, badge:'המשתלם ביותר', sel:true },
+    { qty:2, label:'קני 2 מארזים',            sub:'',              now:298, was:398, badge:'הנמכר ביותר',  sel:false },
+    { qty:1, label:'מארז אחד',                sub:'30 מנות',       now:149, was:199, badge:'',            sel:false }
   ]
 };
 (function(){
@@ -417,7 +423,7 @@ var CONFIG = {
 </script>
 
 <div class="buybar" id="buybar">
-  <div class="bt">30% הנחה · ₪98 במקום ₪140<span>אחריות 30 יום</span></div>
+  <div class="bt">₪149 במקום ₪199<span>קני 3 וקבלי 2 מתנות</span></div>
   <a href="#offer">להזמנה ←</a>
 </div>
 
