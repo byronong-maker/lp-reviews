@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>בשש וארבעים בבוקר אני שוכב על השטיח בסלון ומחליט שמחר</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== LyonRise EMS kit, advertorial. Hebrew RTL, first person masculine ===== */
+/* Palette read off lyonrise.com theme variables, 17 Sept 2026 */
+:root{
+  --bg:#FFFFFF; --card:#FFFFFF; --soft:#F5F5F5; --ink:#121212; --ink2:#3A3A3A; --muted:#6A6A6A;
+  --line:#E6E6E6; --brand:#121212; --brand-d:#000000; --accent:#DD1D1D; --accent-d:#B71717;
+  --radius:4px; --wrap:680px;
+}
+
+/* hide the theme chrome. never a bare footer{} rule, it would eat our own disclaimer */
+[id^="shopify-section-sections--"][id$="__header"],
+[id^="shopify-section-sections--"][id$="__footer"],
+[id^="shopify-section-"][id$="__newsletter"]{display:none !important}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Open Sans',-apple-system,'Segoe UI',sans-serif;
+  font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+
+/* top offer bar */
+.topbar{background:var(--ink);color:#fff;text-align:center;font-size:14px;font-weight:700;padding:8px 12px;letter-spacing:.2px}
+
+/* masthead, editorial, not the brand */
+.masthead{background:var(--card);border-bottom:1px solid var(--line);padding:14px 0}
+.mwrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.mlogo{font-weight:800;letter-spacing:.2px;font-size:19px}
+.mlogo span{color:var(--muted);font-weight:600}
+
+/* header block */
+.crumb{color:var(--muted);font-size:14px;font-weight:600;margin:26px 0 10px}
+h1{font-size:34px;line-height:1.25;font-weight:800;margin:0 0 14px}
+.sub{font-size:20px;color:var(--ink2);font-weight:600;margin:0 0 18px}
+.meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:22px}
+.meta img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.meta .who{font-weight:700;color:var(--ink)}
+.dot{opacity:.5}
+
+.hero{margin:0 0 26px}
+.lede p{font-size:19px;margin:0 0 14px}
+.lede p:last-child{font-weight:700}
+
+/* reasons */
+.reason{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;margin:0 0 22px}
+.rhead{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.num{flex:0 0 auto;width:38px;height:38px;border-radius:var(--radius);
+  background:var(--ink);color:#fff;font-weight:800;font-size:19px;
+  display:flex;align-items:center;justify-content:center}
+.rtitlewrap{flex:1}
+.tag{display:inline-block;font-size:13px;font-weight:700;color:var(--muted);
+  letter-spacing:.3px;margin-bottom:3px}
+.rtitle{font-size:23px;line-height:1.35;font-weight:800;margin:0}
+.rimg{margin:0 0 16px;position:relative}
+.rbody{margin:0 0 14px;color:var(--ink2)}
+.cap{margin:-8px 0 14px;color:var(--muted);font-size:14px}
+.rnote{background:var(--soft);border-inline-start:3px solid var(--ink);
+  border-radius:var(--radius);padding:12px 14px;font-weight:600;font-size:17px;margin:0}
+
+/* diagram labels, Hebrew overlaid in HTML because generators mangle Hebrew */
+.lbl{position:absolute;background:rgba(255,255,255,.92);border:1px solid var(--line);
+  border-radius:var(--radius);padding:3px 9px;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap}
+
+/* data svgs */
+/* direction:ltr so text-anchor=end means the RIGHT edge; Hebrew glyphs still shape correctly */
+.svgbox{width:100%;height:auto;margin:0 0 16px;background:var(--soft);border-radius:var(--radius);direction:ltr;overflow:hidden}
+
+/* inline CTA, mid page. arrow points LEFT because that is forward in RTL */
+.inline-cta{text-align:center;margin:0 0 22px}
+.inline-cta .line{margin:0 0 10px;font-weight:700;font-size:16px;color:var(--ink2)}
+.inline-cta a{display:inline-block;background:var(--ink);color:#fff;
+  text-decoration:none;font-weight:800;font-size:18px;padding:14px 30px;
+  border-radius:var(--radius)}
+.inline-cta a:hover{background:var(--brand-d)}
+
+/* quiz, sits before the offer so its result points forward */
+.quiz{background:var(--card);border:2px solid var(--ink);border-radius:var(--radius);
+  padding:26px;margin:0 0 22px}
+.quiz h2{margin:0 0 4px;font-size:24px;font-weight:800}
+.quiz .qsub{margin:0 0 18px;color:var(--muted);font-size:16px}
+.qopt{display:flex;align-items:center;gap:12px;padding:13px 14px;margin:0 0 10px;
+  border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;
+  font-weight:600;transition:border-color .15s ease,background .15s ease}
+.qopt:hover{border-color:var(--ink)}
+.qopt.sel{border-color:var(--ink);background:var(--soft)}
+.qbox{flex:0 0 auto;width:22px;height:22px;border:2px solid var(--line);
+  border-radius:4px;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:#fff}
+.qopt.sel .qbox{background:var(--ink);border-color:var(--ink)}
+.qresult{margin:16px 0 0;padding:16px;background:var(--soft);border-radius:var(--radius);
+  font-weight:700;display:none}
+.qresult.on{display:block}
+.qhint{margin:14px 0 0;color:var(--muted);font-size:15px;text-align:center}
+
+/* trust strip */
+.trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 22px}
+.trust span{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:8px 14px;font-weight:700;font-size:14px}
+
+/* reviews */
+.reviews{margin:0 0 22px}
+.reviews h2{font-size:24px;font-weight:800;margin:0 0 14px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:0 0 12px}
+.rev .rname{font-weight:800;font-size:15px;margin:0 0 4px}
+.rev .rname small{color:var(--muted);font-weight:600;margin-inline-start:8px}
+.rev .stars{color:var(--ink);letter-spacing:2px;font-size:14px;margin:0 0 6px}
+.rev p{margin:0;color:var(--ink2);font-size:16px}
+
+/* offer */
+.offer{background:var(--card);border:2px solid var(--ink);border-radius:var(--radius);
+  padding:26px;margin:0 0 24px;text-align:center}
+.offer h2{margin:0 0 6px;font-size:26px;font-weight:800}
+.offer .blogo{height:26px;margin:0 auto 14px;display:block;border-radius:0}
+.offer .pimg{margin:0 auto 16px;width:100%;max-width:min(100%,520px)}
+.olist{list-style:none;margin:0 0 14px;padding:0;color:var(--ink2);font-size:16px}
+.olist li{padding:3px 0}
+.gifts{background:var(--soft);border-radius:var(--radius);padding:10px 14px;font-weight:700;font-size:15px;margin:0 0 18px}
+
+/* tiers. rows SELECT, only the CTA navigates */
+.tiers{display:flex;flex-direction:column;gap:10px;margin:0 0 16px;text-align:start}
+.tier{display:flex;align-items:center;gap:12px;padding:14px;border:2px solid var(--line);
+  border-radius:var(--radius);cursor:pointer;background:var(--card);position:relative;transition:border-color .15s ease}
+.tier:hover{border-color:var(--ink2)}
+.tier.sel{border-color:var(--ink);background:var(--soft)}
+.tradio{flex:0 0 auto;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);position:relative}
+.tier.sel .tradio{border-color:var(--ink)}
+.tier.sel .tradio:after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--ink)}
+.tname{flex:1;font-weight:800;font-size:17px}
+.tname small{display:block;font-weight:600;color:var(--muted);font-size:13px}
+.tprice{font-weight:800;font-size:19px;white-space:nowrap}
+.tprice bdi{display:inline-block;direction:ltr;unicode-bidi:isolate}
+.tprice .was{color:var(--muted);font-weight:600;font-size:14px;text-decoration:line-through;margin-inline-start:6px}
+.badge{position:absolute;top:-11px;inset-inline-start:12px;background:var(--ink);color:#fff;
+  font-size:12px;font-weight:800;padding:2px 10px;border-radius:var(--radius)}
+.badge.red{background:var(--accent)}
+
+.timerline{color:var(--muted);margin:10px 0 0;font-size:15px}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:24px;letter-spacing:1px;color:var(--accent);margin:0 0 8px}
+
+.cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;
+  font-weight:800;font-size:19px;padding:15px 34px;border-radius:var(--radius);
+  border:0;cursor:pointer;margin-top:6px;width:100%;max-width:420px}
+.cta:hover{background:var(--brand-d)}
+.under{color:var(--muted);font-size:13px;margin:10px 0 0}
+
+/* faq */
+.faq{margin:0 0 22px}
+.faq h2{font-size:24px;font-weight:800;margin:0 0 12px}
+.faq details{border:1px solid var(--line);border-radius:var(--radius);padding:0 16px;margin:0 0 10px;background:var(--card)}
+.faq summary{cursor:pointer;font-weight:700;padding:13px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-weight:800;color:var(--muted)}
+.faq details[open] summary:after{content:"–"}
+.faq p{margin:0 0 14px;color:var(--ink2);font-size:16px}
+
+/* closing */
+.close{background:var(--ink);color:#fff;border-radius:var(--radius);padding:24px;margin:6px 0 24px;text-align:center}
+.close h2{margin:0 0 8px;font-size:24px;font-weight:800}
+.close p{margin:0 0 14px;font-size:17px;opacity:.9}
+.close .cta{background:#fff;color:var(--ink)}
+
+/* sticky buy bar */
+.buybar{position:fixed;bottom:0;left:0;right:0;background:var(--card);
+  border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.10);
+  padding:10px 14px;display:flex;align-items:center;justify-content:center;
+  gap:16px;z-index:60;transform:translateY(120%);transition:transform .3s ease}
+.buybar.on{transform:none}
+.buybar .cta{margin:0;padding:12px 26px;font-size:17px;width:auto}
+.bbtext{font-weight:700;font-size:16px}
+.bbtext bdi{display:inline-block;direction:ltr;unicode-bidi:isolate}
+.bbtext .was{color:var(--muted);font-weight:600;font-size:13px;text-decoration:line-through}
+
+footer{color:var(--muted);font-size:13px;line-height:1.7;padding:18px 0 96px;text-align:center}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:600px){
+  body{font-size:17px}
+  h1{font-size:28px}
+  .sub{font-size:18px}
+  .rtitle{font-size:20px}
+  .reason{padding:18px}
+  .lbl{font-size:11px;padding:2px 6px}
+  .cta{font-size:17px;padding:14px 20px}
+}
+
+/* story beats */
+.beat{margin:0 0 26px}
+.beat h2{font-size:22px;font-weight:800;margin:0 0 10px}
+.beat p{margin:0 0 12px;font-size:19px}
+.beat p.q{font-weight:700}
+.beat .bimg{margin:0 0 16px}
+.beat p.one{font-weight:700;font-size:21px}
+
+/* comments, facebook style */
+.comments{margin:0 0 22px}
+.comments h2{font-size:24px;font-weight:800;margin:0 0 14px}
+.cm{display:flex;gap:12px;margin:0 0 12px}
+.cm .av{flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.cm .bub{flex:1;background:var(--soft);border-radius:14px;padding:10px 14px}
+.cm .cn{font-weight:800;font-size:15px;margin:0 0 2px}
+.cm .cn small{color:var(--muted);font-weight:600;margin-inline-start:8px;font-size:12px}
+.cm p{margin:0;font-size:15px;color:var(--ink2)}
+.cm .cmeta{color:var(--muted);font-size:12px;margin:4px 14px 0}
+</style>
+</head>
+<body>
+
+<div class="topbar">50% הנחה + 3 מתנות · משלוח חינם · 45 יום להחזרה</div>
+
+<div class="masthead">
+  <div class="mwrap">
+    <div class="mlogo">כושר לגברים עסוקים</div>
+    <div style="color:var(--muted);font-size:14px">המגזין לגבר שאין לו שעה פנויה</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="crumb">סיפור אישי · בטן · 8 שבועות</div>
+
+  <h1>בשש וארבעים בבוקר אני שוכב על השטיח בסלון ומחליט שמחר</h1>
+  <p class="sub">שנתיים של "מחר". ואז חבר פיזיותרפיסט אמר לי משפט אחד על מנגל, ומאז אני לא יורד לרצפה בכלל.</p>
+
+  <div class="meta">
+    <span><span class="who">מאת אייל</span> · 44 · ראש צוות בחברת תוכנה · פתח תקווה</span>
+    <span class="dot">·</span><span>עדכון אחרון: <span id="upd"></span></span>
+  </div>
+
+  <img class="hero" src="images/adv-hero.jpg" alt="אייל שוכב על השטיח בסלון בשש וארבעים בבוקר">
+
+  <!-- beat 1, the rug -->
+  <div class="beat">
+    <p>זה הולך ככה.</p>
+    <p>השעון מצלצל בשש וחצי. הילדים קמים בשבע. יש לי חצי שעה שהיא רק שלי, ואני יודע בדיוק מה אני אמור לעשות איתה.</p>
+    <p>אני יורד לסלון. פורש את השטיח. שוכב על הגב. מסתכל בתקרה.</p>
+    <p class="one">ואז אני מחליט שמחר.</p>
+    <p>עשיתי את זה, בערך, שנתיים. לא כל בוקר. אבל מספיק בקרים כדי שזה יהיה טקס. השטיח, התקרה, ההחלטה.</p>
+  </div>
+
+  <!-- beat 2, the photo -->
+  <div class="beat">
+    <h2>מה ששבר את זה היה תמונה</h2>
+    <div class="bimg"><img src="images/a02-photo.jpg" alt="אייל מסתכל בטלפון על תמונה מאירוע משפחתי"></div>
+    <p>בר מצווה של האחיין. מישהו שלח את התמונות לקבוצה. ואני עומד בקצה, בפרופיל, בחולצה מכופתרת שחשבתי שמסתירה.</p>
+    <p class="one">היא לא הסתירה.</p>
+    <p>לא הייתי שמן. אף פעם לא הייתי. פשוט הייתה שם בטן שלא הייתה שם לפני עשר שנים, והיא לא הייתה מתכננת ללכת לשום מקום.</p>
+    <p>הפסקתי להגיד לעצמי שזו החולצה.</p>
+  </div>
+
+  <!-- beat 3, the drawer -->
+  <div class="beat">
+    <h2>אז ניסיתי. ברצינות, הפעם</h2>
+    <div class="bimg"><img src="images/a03-drawer.jpg" alt="מגירה עם חגורה זולה, גומייה, כרטיס חדר כושר וכבל"></div>
+    <p>מנוי לחדר כושר. הלכתי שישה שבועות, שזה יותר ממה שהלכתי בשש השנים הקודמות עם אותו מנוי.</p>
+    <p>חגורה כזאת מהאינטרנט, בכמה עשרות שקלים, עם מדבקות ג'ל. שבוע ראשון הרגשתי משהו. שבוע שלישי כלום. המדבקות התייבשו והחגורה נכנסה למגירה.</p>
+    <p>אפליקציה של "עשר דקות בטן". פתחתי אותה ארבע פעמים.</p>
+    <p class="one">יש לי מגירה בחדר השינה. גומייה, גלגל, החגורה, כרטיס של חדר הכושר. כל דבר שם עבד. רק אני לא.</p>
+  </div>
+
+  <!-- beat 4, the barbecue -->
+  <div class="beat">
+    <h2>המשפט שאמר לי רועי על המנגל</h2>
+    <div class="bimg"><img src="images/a04-barbecue.jpg" alt="שני גברים במרפסת ליד מנגל, אחד מסביר עם יד על הבטן"></div>
+    <p>אחר כך היה מנגל אצל חברים. ורועי, שהוא פיזיותרפיסט, ראה אותי מושך את החולצה.</p>
+    <p>הוא אמר לי משפט אחד:</p>
+    <p class="q">"אתה כל הזמן מנסה להוריד את הבטן. אף פעם לא אימנת את מה שמאחוריה."</p>
+    <p>לא הבנתי. אז הוא הסביר, עם היד על הבטן של עצמו.</p>
+    <p>מתחת לשומן יש שריר. קיר. כשהוא חזק הוא מחזיק הכל פנימה. כשהוא רפוי, הבטן נשענת החוצה, לא משנה כמה שקלת. כל מה שעשיתי הלך על השומן. את הקיר לא נגעתי אף פעם.</p>
+    <p class="q">"אתה לא נכשלת בבטן," הוא אמר. "פשוט אף פעם לא עשית בטן."</p>
+  </div>
+
+  <!-- beat 5, the mechanism -->
+  <div class="beat">
+    <h2>ואז הוא אמר משהו על EMS</h2>
+    <p>אני ידעתי מה זה בערך. חגורות בטלוויזיה בשנות התשעים. אמרתי לו את זה.</p>
+    <p>הוא צחק. "זה מה שאני עושה במרפאה לאנשים אחרי ניתוח ברך. השריר לא זז, אז אנחנו מזיזים אותו."</p>
+    <p>ההסבר שלו לקח שני משפטים. כל כיווץ שריר מתחיל בפולס חשמלי מהעצב. EMS שולח את הפולס הזה דרך העור, והשריר מתכווץ בדיוק כמו באימון. רק שלא אתה מניע אותו.</p>
+    <p class="q">"זה לא קיצור דרך," הוא אמר. "זה הסט שאתה לא עושה."</p>
+    <p>ואז הוסיף שיש סטודיו כזה ליד המשרד שלו. 189 שקל לעשרים דקות.</p>
+  </div>
+
+  <!-- beat 6, the order -->
+  <div class="beat">
+    <h2>באותו לילה, במטבח</h2>
+    <div class="bimg"><img src="images/a06-order.jpg" alt="לפטופ על שולחן המטבח בלילה עם עמוד המוצר פתוח"></div>
+    <p>אחרי שהילדים נרדמו, ישבתי עם הלפטופ במטבח.</p>
+    <p>מצאתי את הסטודיו. 189 לאימון, בחבילה. חישבתי. שלושה אימונים בחודש, שזה כלום, זה יותר מ-500 שקל. פלוס לנסוע. פלוס להחליף בגדים. פלוס לתאם. הכרתי את הסוף של הסיפור הזה. הוא נמצא במגירה.</p>
+    <p>ואז מצאתי ערכה ביתית. חגורה לבטן ושני ממריצים לידיים. אותה טכנולוגיה. 449 שקל, פעם אחת.</p>
+    <p>מה ששכנע אותי לא היה המחיר. היה מחקר שמצאתי, משנת 2005, בכתב עת לרפואת ספורט. 24 אנשים, EMS על הבטן חמישה ימים בשבוע, שמונה שבועות, בלי אימון אחר. היקף מותניים ירד ב-3.5 סנטימטר בממוצע. 24 מתוך 24 אמרו שהבטן מרגישה מוצקה יותר.</p>
+    <p>ויש 45 יום להחזיר.</p>
+    <p class="one">הזמנתי. לא כי האמנתי. כי 45 יום זה מספיק זמן לגלות אם צדקתי שלא האמנתי.</p>
+  </div>
+
+  <div class="inline-cta">
+    <p class="line">הערכה שאייל הזמין · 449 ₪ במקום 899 ₪ · 45 יום להחזרה</p>
+    <a href="#offer">לערכה ←</a>
+  </div>
+
+  <!-- beat 7, week 1 -->
+  <div class="beat">
+    <h2>שבוע ראשון</h2>
+    <div class="bimg"><img src="images/a07-desk.jpg" alt="אייל בפגישת זום עם החגורה מתחת לחולצה"></div>
+    <p>הגיע אחרי שלושה ימים. קופסה שחורה. חגורה, שני ממריצים לידיים, כבל, מדריך של עמוד אחד, ובקבוק ספריי.</p>
+    <p>האימון הראשון עשיתי בפגישת זום. חגורה מתחת לחולצה, מצב 1, עוצמה 6.</p>
+    <p>זה מרגיש מוזר. השריר מתכווץ בלי שביקשת. אחרי דקה זה מפסיק להיות מוזר. אחרי עשר דקות הרגשתי שריר שלא הרגשתי מאז הצבא.</p>
+    <p>עשרים דקות. סיימתי את הפגישה. הורדתי את החגורה. זהו.</p>
+    <p class="one">בבוקר שאחרי היו לי כאבי שרירים בבטן. בפעם הראשונה בשנים. צחקתי.</p>
+  </div>
+
+  <!-- beat 8, week 3 -->
+  <div class="beat">
+    <h2>שבוע שלישי</h2>
+    <div class="bimg"><img src="images/a08-couch.jpg" alt="אייל על הספה בערב עם החגורה, אגודל על הבקר"></div>
+    <p>הדבר שהכי הפתיע אותי הוא שהמשכתי.</p>
+    <p>לא בגלל משמעת. בגלל שזה לא עלה לי כלום. אין לאן לנסוע, אין מה להחליף, אין רצפה. אני יושב ממילא. השריר עובד או לא עובד. אז שיעבוד.</p>
+    <p>בשבוע השלישי הייתי בעוצמה 11. המדריך של שמונת השבועות אומר לך מתי לעלות, אז לא צריך לנחש.</p>
+    <p>ובשבוע השלישי אשתי אמרה משהו. לא על הבטן. על איך שאני עומד. "אתה עומד אחרת." לא ידעתי מה לענות. אבל היא צדקה.</p>
+  </div>
+
+  <div class="inline-cta">
+    <p class="line">ערכת LyonRise · חגורה + 2 ממריצים לידיים · אתגר 8 שבועות במתנה</p>
+    <a href="#offer">לערכה ב-50% הנחה ←</a>
+  </div>
+
+  <!-- beat 9, week 8 -->
+  <div class="beat">
+    <h2>שבוע שמונה. בלי פילטרים</h2>
+    <div class="bimg"><img src="images/a09-belt.jpg" alt="ידיים סוגרות חגורת עור חור אחד פנימה"></div>
+    <p class="one">אני לא אגיד לך שיש לי קוביות. אין לי.</p>
+    <p>לא בשביל זה קניתי את זה, ומי שמבטיח לך קוביות מחגורה משקר לך.</p>
+    <p>מה שיש: הבטן מוצקה. כשאני עומד היא לא נשענת החוצה. החגורה של המכנסיים נכנסת חור אחד פנימה. ובתמונות, בפרופיל, אני לא מושך את החולצה.</p>
+    <p>זה מה ש-3.5 סנטימטר נראים כמו בחיים האמיתיים. לא דרמה. בטן שמחזיקה את עצמה.</p>
+  </div>
+
+  <!-- beat 10, what I would tell you -->
+  <div class="beat">
+    <h2>מה שהייתי אומר לך</h2>
+    <p>אם אתה כמוני, אתה לא צריך עוד מוטיבציה. יש לך מספיק. ניסית.</p>
+    <p>אתה צריך משהו שלא צריך אותך. שעובד בזמן שאתה עושה משהו אחר. שאין לו מדבקות שמתייבשות ואין לו מגירה לחזור אליה.</p>
+    <p>עשרים דקות ביום. 45 יום לבדוק. אם זה לא בשבילך, מחזירים.</p>
+    <p class="one">השטיח עדיין בסלון. אני פשוט לא שוכב עליו יותר.</p>
+  </div>
+
+  <!-- four real Loox reviews as comments, a different four from the listicle -->
+  <div class="comments">
+    <h2>עוד גברים שהפסיקו להגיד מחר</h2>
+    <div class="cm"><div class="av">א</div><div><div class="bub"><p class="cn">איתי ב.<small>ביקורת מאומתת</small></p><p>יש ימים שבהם אני מסיים לעבוד ואין לי שום חשק לרדת לרצפה ולעשות תרגילי בטן. החגורה מאפשרת לי לעבוד על שרירי הליבה בזמן שאני יושב, וזה הפך את ההתמדה להרבה יותר מציאותית.</p></div><div class="cmeta">אהבתי · השב</div></div></div>
+    <div class="cm"><div class="av">א</div><div><div class="bub"><p class="cn">אריק ו.<small>ביקורת מאומתת</small></p><p>אחרי שקניתי שני ממריצים זולים באינטרנט, כמעט ויתרתי על כל הקטגוריה. כאן השליטה בעוצמה ברורה, החגורה נשארת במקום, ואני לא צריך להתעסק עם מדבקות להחלפה.</p></div><div class="cmeta">אהבתי · השב</div></div></div>
+    <div class="cm"><div class="av">ד</div><div><div class="bub"><p class="cn">דניאל ג.<small>ביקורת מאומתת</small></p><p>בזמן ירידה במשקל רציתי להמשיך לתת לשרירים תשומת לב ולא להתמקד רק במספר שעל המשקל. החגורה והיחידות לידיים מאפשרות לי להוסיף עבודה ממוקדת בלי להפוך את זה לעוד אימון ארוך.</p></div><div class="cmeta">אהבתי · השב</div></div></div>
+    <div class="cm"><div class="av">ע</div><div><div class="bub"><p class="cn">עמית ס.<small>ביקורת מאומתת</small></p><p>כבר הוצאתי לא מעט כסף על אימונים ומפגשים מקצועיים ורציתי משהו לשימוש בבית בין לבין. עכשיו אני יכול לקבל הפעלה ממוקדת של השרירים בזמן שנוח לי.</p></div><div class="cmeta">אהבתי · השב</div></div></div>
+  </div>
+
+  <div class="trust">
+    <span>81 ביקורות מאומתות</span>
+    <span>FDA Cleared (Class II)</span>
+    <span>45 יום להחזרה</span>
+    <span>משלוח חינם</span>
+  </div>
+
+  <!-- OFFER. Mirrors the live store 17 Sept 2026: variant 45279845908523,
+       1x 449 (899), 2x 898 (1,798), 3x 1,347 (2,697), 45-day guarantee.
+       Rows SELECT, only the CTA navigates. CLICK TEST every tier before shipping. -->
+  <div class="offer" id="offer">
+    <img class="blogo" src="https://lyonrise.com/cdn/shop/files/Logo_Tamplate_PNG_484_x_280_1484_x_1280_1.png?v=1771363634&width=300" alt="LyonRise">
+    <h2>ערכת החיטוב והמיצוק של LyonRise</h2>
+    <img class="pimg" src="images/product-kit.jpg" alt="ערכת LyonRise: חגורת בטן, 2 ממריצים לידיים, כבל, מדריך, קופסה">
+    <ul class="olist">
+      <li>ממריץ לבטן</li>
+      <li>2 ממריצים לידיים</li>
+      <li>כבל טעינה ומדריך התחלה מהירה</li>
+      <li>קופסת מתנה</li>
+    </ul>
+    <div class="gifts">מתנות עם הרכישה: אתגר 8 שבועות · בקבוק ספריי מקצועי · משלוח חינם עד הבית</div>
+
+    <div class="tiers" id="tiers">
+      <div class="tier" data-qty="1" data-price="449">
+        <div class="tradio"></div>
+        <div class="tname">ערכה אחת<small>לך</small></div>
+        <div class="tprice"><bdi class="now">449 ₪</bdi> <bdi class="was">899 ₪</bdi></div>
+      </div>
+      <div class="tier sel" data-qty="2" data-price="898">
+        <span class="badge">הנמכר ביותר</span>
+        <div class="tradio"></div>
+        <div class="tname">2 ערכות<small>לך ולעוד מישהו שאומר "מחר"</small></div>
+        <div class="tprice"><bdi class="now">898 ₪</bdi> <bdi class="was">1,798 ₪</bdi></div>
+      </div>
+      <div class="tier" data-qty="3" data-price="1347">
+        <span class="badge red">המשתלם ביותר</span>
+        <div class="tradio"></div>
+        <div class="tname">3 ערכות<small>למשפחה</small></div>
+        <div class="tprice"><bdi class="now">1,347 ₪</bdi> <bdi class="was">2,697 ₪</bdi></div>
+      </div>
+    </div>
+
+    <p class="timerline">המבצע מסתיים הלילה בחצות</p>
+    <p class="timer" id="offerTimer">00:00:00</p>
+    <a class="cta" href="https://lyonrise.com/cart/45279845908523:2?return_to=/checkout" id="mainCta">להזמנה · 45 יום להחזרה ←</a>
+    <p class="under">משלוח חינם · תשלום מאובטח · החזר כספי מלא תוך 45 יום · FDA Cleared</p>
+  </div>
+
+
+
+  <div class="faq">
+    <h2>שאלות שכולם שואלים</h2>
+    <details><summary>זה כואב?</summary><p>לא. מרגישים את השריר מתכווץ ומשתחרר, בהתחלה זה מוזר ואחרי כמה פעמים זה טבעי. מתחילים בעוצמה נמוכה ועולים. למחרת יכולים להיות כאבי שרירים קלים, כמו אחרי אימון.</p></details>
+    <details><summary>כמה זמן עד שרואים משהו?</summary><p>מרגישים את השריר כבר באימון הראשון. שינוי שרואים לוקח שבועות, לא ימים. המחקר מדד את השינוי בהיקף אחרי 8 שבועות של שימוש יומיומי, ולכן הערכה מגיעה עם אתגר 8 שבועות.</p></details>
+    <details><summary>אפשר כל יום?</summary><p>כן. אימון של 20 דקות ביום. מי שרוצה יכול לפצל, בטן ביום אחד וידיים ביום אחר.</p></details>
+    <details><summary>למי זה לא מתאים?</summary><p>לא משתמשים ב-EMS עם קוצב לב או מכשיר רפואי מושתל, בהריון, או עם בעיה לבבית ידועה. אם יש ספק, שאל רופא לפני.</p></details>
+    <details><summary>מה ההבדל מהחגורות הזולות?</summary><p>אלקטרודות מובנות בבד במקום מדבקות ג'ל. אין מה להחליף, ואין ג'ל שמתייבש ומחליש את הפולס אחרי כמה שבועות.</p></details>
+    <details><summary>ואם זה לא בשבילי?</summary><p>45 יום מיום הקבלה. מחזירים ומקבלים את הכסף בחזרה.</p></details>
+  </div>
+
+
+  <div class="close">
+    <h2>השריר שמאחורי הבטן לא יתאמן לבד</h2>
+    <p>הערכה שאייל השתמש בה. 20 דקות ביום, 45 יום להחליט.</p>
+    <a class="cta" href="#offer">להזמנה · 45 יום להחזרה ←</a>
+  </div>
+
+  <footer>
+    התוכן בעמוד זה הוא חוות דעת אישית ואינו מהווה ייעוץ רפואי. המוצר אינו מיועד לאבחון, טיפול או ריפוי של מצב רפואי. התוצאות משתנות מאדם לאדם ותלויות בהתמדה, בתזונה ובאורח החיים. אין להשתמש במכשיר עם קוצב לב או מכשיר מושתל, בהריון, או במקרה של בעיה לבבית, ללא אישור רופא. המחקר המצוטט: Porcari et al., Journal of Sports Science and Medicine, 2005.
+  </footer>
+
+</div>
+
+<div class="buybar" id="buybar">
+  <span class="bbtext">ערכת LyonRise · <bdi class="now">449 ₪</bdi> <bdi class="was">899 ₪</bdi></span>
+  <a class="cta" href="#offer">להזמנה</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+  /* last updated, today's date in Hebrew locale */
+  var u = document.getElementById('upd');
+  if(u){ u.textContent = new Date().toLocaleDateString('he-IL', {day:'numeric', month:'long', year:'numeric'}); }
+
+  /* offer timer. runs to midnight so it lines up with the store's own bar */
+  var tv = document.getElementById('offerTimer');
+  if(tv){
+    var nextMidnight = function(){ var d=new Date(); d.setHours(24,0,0,0); return d.getTime(); };
+    var end = nextMidnight();
+    setInterval(function(){
+      var s = Math.max(0, Math.round((end - Date.now())/1000));
+      if(s <= 0){ end = nextMidnight(); s = Math.round((end - Date.now())/1000); }
+      var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), r = s%60;
+      tv.textContent = (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(r<10?'0':'')+r;
+    }, 500);
+  }
+
+  /* tiers: rows select, only the CTA navigates. cart permalink carries the qty */
+  var VARIANT = '45279845908523';
+  var cta = document.getElementById('mainCta');
+  var tiers = [].slice.call(document.querySelectorAll('.tier'));
+  function pick(t){
+    tiers.forEach(function(x){ x.classList.remove('sel'); });
+    t.classList.add('sel');
+    if(cta){ cta.href = 'https://lyonrise.com/cart/' + VARIANT + ':' + t.getAttribute('data-qty') + '?return_to=/checkout'; }
+  }
+  tiers.forEach(function(t){ t.addEventListener('click', function(){ pick(t); }); });
+  var pre = document.querySelector('.tier.sel'); if(pre) pick(pre);
+
+  /* sticky buy bar, reveals past the hero and hides over the offer */
+  var bar = document.getElementById('buybar');
+  var offer = document.getElementById('offer');
+  function onScroll(){
+    if(!bar) return;
+    var past = window.scrollY > 900;
+    var atOffer = offer && offer.getBoundingClientRect().top < window.innerHeight * 0.9;
+    bar.classList.toggle('on', past && !atOffer);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* quiz. result points FORWARD into the offer, never back at a reason */
+  var opts = [].slice.call(document.querySelectorAll('.qopt'));
+  var qres = document.getElementById('qresult');
+  var qhint = document.getElementById('qhint');
+  function scoreText(n){
+    if(n >= 3) return 'סימנת ' + n + ' מתוך 6. אתה בדיוק מי שהערכה נבנתה בשבילו. תבדוק את ההצעה למטה, יש לך 45 יום להחליט.';
+    return 'סימנת ' + n + '. זה מספיק כדי להבין למה הרצפה לא עבדה. ההצעה למטה.';
+  }
+  opts.forEach(function(o){
+    o.addEventListener('click', function(){
+      o.classList.toggle('sel');
+      var n = document.querySelectorAll('.qopt.sel').length;
+      if(n > 0){
+        qres.textContent = scoreText(n);
+        qres.classList.add('on');
+        if(qhint) qhint.style.display = 'none';
+      } else {
+        qres.classList.remove('on');
+        if(qhint) qhint.style.display = '';
+      }
+    });
+  });
+
+  /* scroll reveal */
+  var els = [].slice.call(document.querySelectorAll('.beat,.comments,.offer,.faq,.close'));
+  els.forEach(function(e){ e.classList.add('reveal'); });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    els.forEach(function(e){ e.classList.add('in'); });
+  }
+
+});
+</script>
+
+</body>
+</html>
