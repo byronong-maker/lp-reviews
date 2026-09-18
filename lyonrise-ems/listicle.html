@@ -478,7 +478,11 @@ footer{color:var(--muted);font-size:13px;line-height:1.7;padding:18px 0 96px;tex
 
   <!-- OFFER. Mirrors the live store 17 Sept 2026: variant 45279845908523,
        1x 449 (899), 2x 898 (1,798), 3x 1,347 (2,697), 45-day guarantee.
-       Rows SELECT, only the CTA navigates. CLICK TEST every tier before shipping. -->
+       Rows SELECT for the reader's benefit; the CTA goes to the PRODUCT PAGE, never a cart permalink.
+       Click-tested 18 Sept: permalinks charge the right kit price (448.90 / 897.90 / 1,346.90 after a
+       store-side automatic 0.10 discount) but the three free gifts are NOT added, and adding the gift
+       variants to the link charges them at full price (647.70). The gifts app only fires from the PDP,
+       same as Elovate Magnesium. -->
   <div class="offer" id="offer">
     <img class="blogo" src="https://lyonrise.com/cdn/shop/files/Logo_Tamplate_PNG_484_x_280_1484_x_1280_1.png?v=1771363634&width=300" alt="LyonRise">
     <h2>ערכת החיטוב והמיצוק של LyonRise</h2>
@@ -513,7 +517,7 @@ footer{color:var(--muted);font-size:13px;line-height:1.7;padding:18px 0 96px;tex
 
     <p class="timerline">המבצע מסתיים הלילה בחצות</p>
     <p class="timer" id="offerTimer">00:00:00</p>
-    <a class="cta" href="https://lyonrise.com/cart/45279845908523:2?return_to=/checkout" id="mainCta">להזמנה · 45 יום להחזרה ←</a>
+    <a class="cta" href="https://lyonrise.com/products/lyonrise-muscle-stimulator" id="mainCta">להזמנה · 45 יום להחזרה ←</a>
     <p class="under">משלוח חינם · תשלום מאובטח · החזר כספי מלא תוך 45 יום · FDA Cleared</p>
   </div>
 
@@ -564,14 +568,13 @@ document.addEventListener('DOMContentLoaded', function(){
     }, 500);
   }
 
-  /* tiers: rows select, only the CTA navigates. cart permalink carries the qty */
-  var VARIANT = '45279845908523';
+  /* tiers: rows select, the CTA always goes to the product page. The gifts app and the same
+     1x/2x/3x picker live there; a cart permalink drops the gifts (tested 18 Sept) */
   var cta = document.getElementById('mainCta');
   var tiers = [].slice.call(document.querySelectorAll('.tier'));
   function pick(t){
     tiers.forEach(function(x){ x.classList.remove('sel'); });
     t.classList.add('sel');
-    if(cta){ cta.href = 'https://lyonrise.com/cart/' + VARIANT + ':' + t.getAttribute('data-qty') + '?return_to=/checkout'; }
   }
   tiers.forEach(function(t){ t.addEventListener('click', function(){ pick(t); }); });
   var pre = document.querySelector('.tier.sel'); if(pre) pick(pre);
