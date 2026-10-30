@@ -4,7 +4,7 @@
 .lp-pill .lp-code{background:rgba(255,255,255,.22);color:#fff}
 @media (max-height:760px) and (max-width:899px){.lp-hero-img{max-width:min(100%,32vh);margin-left:auto;margin-right:auto}.lp-hero{padding-top:10px}}
 @media (min-width:900px){.lp-hero .lp-wrap{max-width:1040px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.lp-hero-img{margin:0;max-width:none}.lp-hero .lp-trust{justify-content:flex-start}}
-</style></head><body><!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.7 (Niklas round 1: omni9.de spacing + omni9.de buttons; [MISSING] open) -->
+</style></head><body><!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.8 (Niklas round 1: omni9.de spacing, buttons, 1200px width; [MISSING] open) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -211,6 +211,39 @@
 .lp-cta:hover{filter:brightness(1.12)}
 .lp-mode button[aria-pressed=true],.lp-rhythm button[aria-pressed=true]{background:linear-gradient(135deg,#333240 0%,#636279 96%);border-color:#333240;color:#fff}
 .lp-mode button,.lp-rhythm button{border-radius:8px}
+/* v0.8 Niklas: page width like omni9.de (1200px content, 2-column hero, button ~370px) */
+@media (min-width:900px){
+.lp-wrap{max-width:1232px!important;padding:0 16px}
+.lp-hero .lp-wrap{max-width:1232px!important}
+.lp-hero-txt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"img h1" "img p" "img price" "img cta";column-gap:56px;align-content:center;align-items:start}
+.lp-hero-txt>.lp-h1{grid-area:h1;align-self:end;margin-top:0}
+.lp-hero-txt>.lp-p{grid-area:p}
+.lp-hero-txt>.lp-cta{grid-area:cta;justify-self:start}
+.lp-prod{display:contents}
+.lp-prod .lp-hero-img{grid-area:img;max-width:none!important;width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(51,50,64,.15)}
+.lp-prod-txt{grid-area:price;background:#fff;border:1px solid var(--lp-line);border-radius:14px;padding:16px 18px;margin-bottom:24px}
+.lp-prod .lp-price-now{font-size:30px}
+.lp-cta{width:auto;min-width:370px;display:inline-flex}
+.lp-revs{grid-template-columns:repeat(3,1fr);align-items:start}
+.lp-rev-txt{-webkit-line-clamp:5}
+.lp-dark{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:0 48px;padding:40px}
+.lp-dark-img{grid-row:1 / span 2;grid-column:1}
+.lp-dark-head{grid-column:2;align-self:end}
+.lp-dark-body{grid-column:2;margin-top:16px}
+.lp-dark .lp-h2{font-size:30px}
+.lp-dark .lp-kicker{font-size:12px;padding:7px 14px}
+.lp-opts{max-width:960px;margin:0 auto;gap:24px}
+.lp-opt{padding:28px 16px 20px}
+.lp-opt img{width:120px;height:120px;flex-basis:120px}
+.lp-opt-title{font-size:17px}.lp-opt-sub{font-size:13px}.lp-opt-price{font-size:24px}
+.lp-flag{font-size:11px;padding:4px 12px}
+#lp-buy .lp-note{max-width:760px;margin-left:auto;margin-right:auto}
+.lp-box{max-width:960px;margin:0 auto;padding:36px 40px}
+.lp-faq .lp-wrap>details,.lp-perk{max-width:960px;margin-left:auto;margin-right:auto}
+.lp-final .lp-wrap{max-width:960px!important}
+.lp-choice{max-width:560px;margin-left:auto;margin-right:auto}
+.lp-final .lp-trust{max-width:760px;margin-left:auto;margin-right:auto}
+}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
