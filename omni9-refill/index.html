@@ -4,7 +4,7 @@
 .lp-pill .lp-code{background:rgba(255,255,255,.22);color:#fff}
 @media (max-height:760px) and (max-width:899px){.lp-hero-img{max-width:min(100%,32vh);margin-left:auto;margin-right:auto}.lp-hero{padding-top:10px}}
 @media (min-width:900px){.lp-hero .lp-wrap{max-width:1040px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.lp-hero-img{margin:0;max-width:none}.lp-hero .lp-trust{justify-content:flex-start}}
-</style></head><body><!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.4 (copy v3 from OMNI9 GPT, email-matched gold CTA, [MISSING] open) -->
+</style></head><body><!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.6 (copy v3 from OMNI9 GPT, compact pass to template 08 wireframe, [MISSING] open) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -108,6 +108,70 @@
 .lp-checks li:before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--lp-gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/14px no-repeat}
 .lp-opt-sub{display:block;margin-top:2px;line-height:1.35}
 .lp-faq h2{margin-bottom:14px}
+.lp-dark-img{border-radius:14px;overflow:hidden;margin:0 0 18px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.lp-price{flex-wrap:wrap;align-items:center}
+.lp-pill{display:inline-flex;align-items:center;gap:6px;background:var(--lp-gold);color:#fff;font-weight:700;font-size:13px;border-radius:999px;padding:5px 11px;line-height:1.2}
+.lp-pill .lp-code{background:rgba(255,255,255,.22);color:#fff}
+@media (max-height:760px) and (max-width:899px){.lp-hero-img{max-width:min(100%,32vh);margin-left:auto;margin-right:auto}.lp-hero{padding-top:10px}}
+@media (min-width:900px){.lp-hero .lp-wrap{max-width:1040px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.lp-hero-img{margin:0;max-width:none}.lp-hero .lp-trust{justify-content:flex-start}}
+/* v0.6 compact pass: template 08 says 2-3 screens on mobile */
+.lp-sec{padding:22px 0}
+.lp-h2{font-size:22px;margin-bottom:10px}
+.lp-hero-img{margin-bottom:14px}
+.lp-revs{gap:8px}
+.lp-rev{padding:11px 13px;cursor:pointer}
+.lp-rev-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.lp-rev-head .lp-rev-tag{margin:0}
+.lp-rev-head .lp-stars{font-size:14px;letter-spacing:1px}
+.lp-rev-txt{font-size:14px;line-height:1.45;margin:6px 0 4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lp-rev.lp-open .lp-rev-txt{-webkit-line-clamp:unset;display:block}
+.lp-rev-by{font-size:12px}
+.lp-dark{padding:16px;display:grid;grid-template-columns:38% 1fr;gap:4px 14px;align-items:start}
+.lp-dark-img{margin:0;grid-row:1 / span 2;align-self:stretch;border-radius:10px}
+.lp-dark-img img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.lp-dark-head{align-self:center}
+.lp-dark .lp-kicker{font-size:9.5px;padding:5px 9px;margin:0 0 6px;letter-spacing:.04em}
+.lp-dark .lp-h2{font-size:18px;text-align:left;margin:0}
+.lp-dark-body{grid-column:1 / -1;margin-top:10px}
+.lp-dark .lp-p{font-size:14px;line-height:1.45;margin:0 0 8px}
+.lp-checks{margin:8px 0;gap:6px}
+.lp-checks li{font-size:14px;line-height:1.4;padding-left:26px}
+.lp-checks li:before{width:17px;height:17px;background-size:12px}
+.lp-opts{grid-template-columns:repeat(3,1fr);gap:8px;padding-top:10px}
+.lp-opt{flex-direction:column;align-items:center;text-align:center;gap:4px;padding:16px 6px 10px}
+.lp-opt img{width:52px;height:52px;flex:0 0 52px}
+.lp-opt-title{font-size:13px;line-height:1.25}
+.lp-opt-sub{font-size:11px;line-height:1.3}
+.lp-opt-price{order:-1;text-align:center;font-size:17px}
+.lp-flag{right:50%;transform:translateX(50%);white-space:nowrap;font-size:9.5px;padding:3px 8px}
+.lp-box{padding:14px}
+.lp-box .lp-h2{font-size:18px!important}
+.lp-box .lp-p{font-size:14px}
+.lp-mode{margin-bottom:10px}
+.lp-save{margin:10px 0 6px;padding:9px 12px}
+.lp-terms{font-size:12px;color:var(--lp-ink-2);text-align:center;margin:0 0 6px}
+.lp-faq details{margin-bottom:6px}
+.lp-faq summary{padding:11px 28px 11px 0;font-size:15px}
+.lp-faq summary:after{top:7px}
+.lp-perk{padding:12px 14px}
+.lp-final .lp-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;font-size:12px;line-height:1.35}
+.lp-final .lp-trust>span{display:flex;flex-direction:column;align-items:center;gap:6px}
+.lp-final .lp-trust>span:before{width:34px;height:34px;margin:0;background-size:20px}
+.lp-final .lp-trust .lp-slot{font-size:10.5px;padding:2px 4px}
+.lp-final .lp-ico-ship:before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M3 7h11v9H3zM14 10h4l3 3v3h-7z'/%3E%3Ccircle cx='7' cy='17.5' r='1.6'/%3E%3Ccircle cx='17' cy='17.5' r='1.6'/%3E%3C/svg%3E")}
+.lp-final .lp-ico-ret:before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M9 7H4V2'/%3E%3Cpath d='M4.5 7A8 8 0 1 1 4 13'/%3E%3C/svg%3E")}
+.lp-final .lp-ico-guar:before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z'/%3E%3Cpath d='M8.5 12l2.5 2.5 4.5-5'/%3E%3C/svg%3E")}
+.lp-flag{font-size:8.5px;letter-spacing:.02em;padding:3px 6px}
+/* hero as the wireframe's product card: headline first, then card with image + price */
+.lp-hero .lp-wrap{display:block!important;max-width:560px!important}
+.lp-prod{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--lp-line);border-radius:14px;padding:10px;margin:4px 0 14px}
+.lp-prod .lp-hero-img{flex:0 0 38%;max-width:38%!important;margin:0!important;border-radius:10px;box-shadow:none}
+.lp-prod .lp-price{margin:0 0 6px;gap:6px}
+.lp-prod .lp-price-now{font-size:24px}
+.lp-prod .lp-pill{font-size:11px;padding:4px 8px}
+.lp-prod .lp-price-note{font-size:12px;line-height:1.4;margin:0}
+.lp-hero .lp-p{margin-bottom:10px}
+@media (min-width:900px){.lp-hero .lp-wrap{max-width:640px!important}.lp-prod .lp-hero-img{flex-basis:200px}}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
@@ -118,15 +182,18 @@
   <!-- 1 HERO WITH THE PRODUCT: one product, one click -->
   <section class="lp-hero lp-sec">
     <div class="lp-wrap">
-      <!-- hero image = the refill email hero (Klaviyo e03 / 6140d6f7), same imagery as the email. SHOPIFY: upload to Files and replace src -->
-      <div class="lp-hero-img"><img src="img/omni9-hero-email.webp" alt="OMNI9 Glas mit goldenem L&ouml;ffel auf einem Stein bei Nacht" width="790" height="682" loading="eager"></div>
       <div class="lp-hero-txt">
       <h1 class="lp-h1">Dein OMNI9 Vorrat wird knapp?</h1>
       <p class="lp-p">Dein t&auml;glicher L&ouml;ffel geh&ouml;rt inzwischen dazu. F&uuml;lle deinen Vorrat auf, bevor dein Glas leer ist.</p>
+      <div class="lp-prod">
+      <!-- hero image = the refill email hero (Klaviyo e03 / 6140d6f7), same imagery as the email. SHOPIFY: upload to Files and replace src -->
+        <div class="lp-hero-img"><img src="img/omni9-hero-email.webp" alt="OMNI9 Glas mit goldenem L&ouml;ffel auf einem Stein bei Nacht" width="790" height="682" loading="eager"></div>
+              <div class="lp-prod-txt">
       <div class="lp-price"><span class="lp-price-now">84,00&nbsp;&euro;</span><span class="lp-pill">&minus;5&nbsp;&euro; &middot; Code <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
       <p class="lp-price-note">OMNI9 &middot; 30 Portionen: einmalig 84&nbsp;&euro; mit 5&nbsp;&euro; Rabatt oder 69&nbsp;&euro; pro Glas mit automatischer Lieferung.</p>
+        </div>
+      </div>
       <a class="lp-cta" data-lp-cta href="/cart/56780244877660:1?discount=QF4ZJ68D2AJP"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
-      <div class="lp-trust"><span>Versand: DE 3,90&nbsp;&euro; &middot; AT 7,90&nbsp;&euro; &middot; CH 8,90&nbsp;&euro;</span><span>R&uuml;ckgabe <span class="lp-slot">[MISSING]</span></span><span>90 Tage Geld-zur&uuml;ck-Garantie <span class="lp-slot">[MISSING: Bedingung laut AGB: ab 3 Gl&auml;sern einmalig, nicht im Abo]</span></span></div>
     </div>
     </div>
   </section>
@@ -138,9 +205,9 @@
       <h2 class="lp-h2">Wenn aus Testen eine Routine wird</h2>
       <div class="lp-revs">
         <!-- REAL reviews from Loox (omni9.de/pages/bewertungen), verbatim, all 5/5 + verified. Selection to be confirmed by Niklas. -->
-        <article class="lp-rev"><span class="lp-rev-tag">Seit 2 Monaten dabei</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="lp-rev-txt">&bdquo;Ich bin Krankenschwester und arbeite Schicht. Mein K&ouml;rper war die letzten Jahre komplett durch den Wind. Keine Energie, Darm spielte verr&uuml;ckt, st&auml;ndig krank. Ich hab mein Glas jetzt zwei Monate und ich kann sagen es ist das erste Produkt, dass ich nicht nach 3 Wochen wieder abgebrochen habe. Nicht weil ich m&uuml;sste sondern weil ich einfach einen Unterschied merke. Weiterempfehlung von meiner Seite auf jeden Fall&ldquo;</p><div class="lp-rev-by"><b>Annika</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
-        <article class="lp-rev"><span class="lp-rev-tag">3. Doppelpackung</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="lp-rev-txt">&bdquo;Das ist schon meine dritte Doppel Packung und bin mit dem Produkt sehr, sehr zufrieden und werde weiter nehmen...&ldquo;</p><div class="lp-rev-by"><b>Rieke Jansen</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
-        <article class="lp-rev"><span class="lp-rev-tag">Im Abo</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="lp-rev-txt">&bdquo;bestelle immer im Abo, Nachschub kommt immer p&uuml;nktlich an. Bin zufrieden :)&ldquo;</p><div class="lp-rev-by"><b>Christina</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
+        <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Seit 2 Monaten dabei</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Ich bin Krankenschwester und arbeite Schicht. Mein K&ouml;rper war die letzten Jahre komplett durch den Wind. Keine Energie, Darm spielte verr&uuml;ckt, st&auml;ndig krank. Ich hab mein Glas jetzt zwei Monate und ich kann sagen es ist das erste Produkt, dass ich nicht nach 3 Wochen wieder abgebrochen habe. Nicht weil ich m&uuml;sste sondern weil ich einfach einen Unterschied merke. Weiterempfehlung von meiner Seite auf jeden Fall&ldquo;</p><div class="lp-rev-by"><b>Annika</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
+        <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">3. Doppelpackung</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Das ist schon meine dritte Doppel Packung und bin mit dem Produkt sehr, sehr zufrieden und werde weiter nehmen...&ldquo;</p><div class="lp-rev-by"><b>Rieke Jansen</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
+        <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Im Abo</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;bestelle immer im Abo, Nachschub kommt immer p&uuml;nktlich an. Bin zufrieden :)&ldquo;</p><div class="lp-rev-by"><b>Christina</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
       </div>
     </div>
   </section>
@@ -151,8 +218,9 @@
       <div class="lp-dark">
         <!-- AI image (OpenAI, guide p8 Part A+B), real jar from reference. SHOPIFY: upload to Files and replace src with the cdn.shopify.com URL -->
         <div class="lp-dark-img"><img src="img/omni9-morgenroutine.webp" alt="Frau nimmt morgens in der K&uuml;che einen L&ouml;ffel OMNI9 aus dem Glas" width="1200" height="800" loading="lazy"></div>
-        <div class="lp-center"><span class="lp-kicker">Bioaktives Zellregenerations-System</span></div>
-        <h2 class="lp-h2">Warum sich Weiternehmen lohnt</h2>
+        <div class="lp-dark-head"><span class="lp-kicker">Bioaktives Zellregenerations-System</span>
+        <h2 class="lp-h2">Warum sich Weiternehmen lohnt</h2></div>
+        <div class="lp-dark-body">
         <p class="lp-p">Die 9 Regenerationsachsen greifen wie Zahnr&auml;der ineinander &ndash; mit Ver&auml;nderungen, die du im Alltag sp&uuml;ren kannst:</p>
         <ul class="lp-checks">
           <li>Gleichm&auml;&szlig;ige Energie, die dich durch den Tag tr&auml;gt.</li>
@@ -162,6 +230,7 @@
           <li>Mehr Belastbarkeit f&uuml;r das, was dein Alltag verlangt.</li>
         </ul>
         <p class="lp-p" style="margin:0">Dein t&auml;glicher L&ouml;ffel versorgt alle 9 Achsen gemeinsam, damit sie zusammenarbeiten k&ouml;nnen.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -213,6 +282,7 @@
           <p class="lp-p" style="margin:0" data-lp-save-for="692303823196">13 Lieferungen im Jahr &middot; <b>260&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
           <p class="lp-p" style="margin:0" data-lp-save-for="692318962012" hidden>Etwa 8&ndash;9 Lieferungen im Jahr &middot; <b>rund 170&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
         </div>
+        <p class="lp-terms"><span class="lp-slot">[MISSING: Abo-Bedingungen in einer Zeile laut AGB (OMNI9 GPT)]</span></p>
         <p class="lp-note" style="margin:0">Ein Glas enth&auml;lt 30 Portionen. W&auml;hle den Rhythmus passend zu deinem Verbrauch.</p>
       </div>
     </div>
@@ -244,7 +314,7 @@
       <p class="lp-p">Sorge f&uuml;r Nachschub f&uuml;r deinen t&auml;glichen L&ouml;ffel &ndash; mit deiner gew&auml;hlten Menge oder automatischer Lieferung.</p>
       <div class="lp-choice"><span data-lp-choice>5er Set + 2 gratis Immun Booster</span><b data-lp-sum>394,00&nbsp;&euro;</b></div>
       <a class="lp-cta" data-lp-cta data-lp-buy href="/cart/56710921224540:1?discount=QF4ZJ68D2AJP"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
-      <div class="lp-trust"><span>Versand: DE 3,90&nbsp;&euro; &middot; AT 7,90&nbsp;&euro; &middot; CH 8,90&nbsp;&euro;</span><span>R&uuml;ckgabe <span class="lp-slot">[MISSING]</span></span><span>90 Tage Geld-zur&uuml;ck-Garantie <span class="lp-slot">[MISSING: Bedingung laut AGB: ab 3 Gl&auml;sern einmalig, nicht im Abo]</span></span></div>
+      <div class="lp-trust"><span class="lp-ico-ship">Versand: DE 3,90&nbsp;&euro; &middot; AT 7,90&nbsp;&euro; &middot; CH 8,90&nbsp;&euro;</span><span class="lp-ico-ret">R&uuml;ckgabe <span class="lp-slot">[MISSING]</span></span><span class="lp-ico-guar">90 Tage Geld-zur&uuml;ck-Garantie <span class="lp-slot">[MISSING: Bedingung laut AGB: ab 3 Gl&auml;sern einmalig, nicht im Abo]</span></span></div>
     </div>
   </section>
 
@@ -274,6 +344,8 @@
     }
   }
   root.addEventListener('click',function(e){
+    var r=e.target.closest('.lp-rev');
+    if(r){r.classList.toggle('lp-open');return;}
     var m=e.target.closest('[data-lp-mode]');
     if(m){st.mode=m.getAttribute('data-lp-mode'); render(); return;}
     var p=e.target.closest('[data-lp-plan]');
