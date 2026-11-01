@@ -1,10 +1,12 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OMNI9 Refill LP preview</title><style>body{margin:0;background:#F7F3E8}.lp-dark-img{border-radius:14px;overflow:hidden;margin:0 0 18px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+<!doctype html><html lang="de"><head>
+<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OMNI9 Refill LP preview</title><style>body{margin:0;background:#F7F3E8}.lp-dark-img{border-radius:14px;overflow:hidden;margin:0 0 18px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .lp-price{flex-wrap:wrap;align-items:center}
 .lp-pill{display:inline-flex;align-items:center;gap:6px;background:var(--lp-gold);color:#fff;font-weight:700;font-size:13px;border-radius:999px;padding:5px 11px;line-height:1.2}
 .lp-pill .lp-code{background:rgba(255,255,255,.22);color:#fff}
 @media (max-height:760px) and (max-width:899px){.lp-hero-img{max-width:min(100%,32vh);margin-left:auto;margin-right:auto}.lp-hero{padding-top:10px}}
 @media (min-width:900px){.lp-hero .lp-wrap{max-width:1040px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.lp-hero-img{margin:0;max-width:none}.lp-hero .lp-trust{justify-content:flex-start}}
-</style></head><body><!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.8 (Niklas round 1: omni9.de spacing, buttons, 1200px width; [MISSING] open) -->
+</style></head><body>
+<!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.9 (Niklas detailed feedback 2026-11-01; OMNI9 GPT round-2 copy in, word for word) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -244,6 +246,109 @@
 .lp-choice{max-width:560px;margin-left:auto;margin-right:auto}
 .lp-final .lp-trust{max-width:760px;margin-left:auto;margin-right:auto}
 }
+/* v0.9 Niklas detailed feedback 2026-11-01 */
+.lp-price-was{font-weight:500}
+/* hero: 3 long-term benefits with icons, people creative */
+.lp-bens{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px}
+.lp-bens li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px;line-height:1.35}
+.lp-ben-ico{flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#333240,#636279);display:flex;align-items:center;justify-content:center;box-shadow:0 0 10px rgba(214,166,85,.45)}
+.lp-ben-ico svg{width:20px;height:20px;stroke:#D6A655;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lp-hero-img.lp-people{aspect-ratio:628/470}
+.lp-hero-img.lp-people img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+/* 3: two options, each card is a link to the product page */
+.lp-two{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+.lp-card{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;background:#fff;border:2px solid var(--lp-line);border-radius:16px;padding:22px 12px 14px;color:var(--lp-ink)!important;text-decoration:none!important;transition:border-color .15s,box-shadow .15s}
+.lp-card:hover{border-color:var(--lp-ink);box-shadow:0 10px 30px rgba(51,50,64,.12)}
+.lp-card.lp-best{border-color:var(--lp-gold);box-shadow:0 0 15px 1px rgba(214,166,85,.35)}
+.lp-card-img{width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;margin:0 0 12px;background:var(--lp-cream-2)}
+.lp-card-img img{width:100%;height:100%;object-fit:cover}
+.lp-best .lp-card-img{background:#22212c}
+.lp-best .lp-card-img img{object-fit:cover;object-position:50% 2%;transform:scale(1.02)}
+.lp-card-title{font-weight:700;font-size:16px;line-height:1.25;margin:0 0 4px}
+.lp-card-sub{font-size:12.5px;line-height:1.4;color:var(--lp-ink-2);margin:0 0 10px}
+.lp-card-price{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:0 0 4px}
+.lp-card-price s{font-size:15px;color:var(--lp-ink-2)}
+.lp-card-price b{font-size:26px;line-height:1}
+.lp-card-unit{font-size:12px;color:var(--lp-ink-2);margin:0 0 12px}
+.lp-card-list{list-style:none;margin:0 0 14px;padding:0;text-align:left;display:grid;gap:7px;font-size:12.5px;line-height:1.35;width:100%}
+.lp-card-list li{position:relative;padding-left:22px}
+.lp-card-list li:before{content:"";position:absolute;left:0;top:1px;width:15px;height:15px;border-radius:50%;background:var(--lp-gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/11px no-repeat}
+.lp-card .lp-cta{margin-top:auto;min-width:0!important;width:100%;font-size:14px;padding:12px 10px;min-height:46px}
+.lp-card .lp-flag{top:-11px}
+/* 4: calculator, subscription only, clickable */
+.lp-box .lp-cta{margin-top:16px}
+/* 6: savings (homepage section "Mit OMNI9 ersetzt du 16+ Supplements gleichzeitig") */
+.lp-sav{background:#fff;border:1px solid var(--lp-line);border-radius:20px;padding:22px 18px;box-shadow:0 10px 30px rgba(51,50,64,.08)}
+.lp-sav-sub{font-weight:600;text-align:center;margin:0 0 12px;color:var(--lp-ink-2)}
+.lp-sav-list{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 18px;font-size:14px}
+.lp-sav-list li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--lp-line);padding:7px 0}
+.lp-sav-list li span:last-child{font-weight:600;white-space:nowrap}
+.lp-sav-rows{display:grid;gap:8px;margin:0 0 16px}
+.lp-sav-row{display:flex;justify-content:space-between;align-items:center;gap:10px;border-radius:12px;padding:12px 14px;background:var(--lp-cream-2);font-size:14px}
+.lp-sav-row b{white-space:nowrap;font-size:15px}
+.lp-sav-row s{color:var(--lp-ink-2)}
+.lp-sav-row.lp-us{background:linear-gradient(135deg,#333240,#636279);color:#fff}
+.lp-sav-row.lp-us b{color:var(--lp-gold)}
+.lp-sav-total{display:flex;flex-direction:column;align-items:center;justify-content:center;width:190px;height:190px;margin:0 auto 12px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4a4858,#22212c);color:#fff;box-shadow:0 0 22px 2px rgba(214,166,85,.55);text-align:center}
+.lp-sav-total span{font-size:14px;color:#e9e6f2}
+.lp-sav-total b{font-size:34px;line-height:1.05;color:var(--lp-gold)}
+.lp-sav-foot{text-align:center;font-size:14px;color:var(--lp-ink-2);margin:0}
+/* 7: final CTA as a dark product card */
+.lp-final{background:var(--lp-cream-2)}
+.lp-endcard{display:grid;grid-template-columns:1fr;gap:0;background:linear-gradient(160deg,#333240,#1d1c26);border-radius:22px;overflow:hidden;color:#fff;text-align:left;box-shadow:0 18px 40px rgba(51,50,64,.25)}
+.lp-endcard-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+.lp-endcard-body{padding:24px 20px 26px}
+.lp-endcard .lp-h2{color:#fff;text-align:left;margin-bottom:10px}
+.lp-endcard .lp-p{color:#e9e6f2;margin-bottom:18px}
+.lp-endprices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 20px}
+.lp-endprice{border:1px solid rgba(214,166,85,.45);border-radius:12px;padding:10px 12px;background:rgba(255,255,255,.04)}
+.lp-endprice small{display:block;font-size:12px;color:#cfcbe0;margin-bottom:2px}
+.lp-endprice s{color:#a9a5bd;font-size:14px;margin-right:6px}
+.lp-endprice b{font-size:22px;color:#fff}
+.lp-endprice.lp-best b{color:var(--lp-gold)}
+.lp-endcard .lp-cta{background:linear-gradient(135deg,#D6A655,#b8863a);color:#22212c!important;box-shadow:0 0 18px 2px rgba(214,166,85,.6)}
+.lp-endcard .lp-note{color:#cfcbe0;text-align:left}
+/* 8: "Mit OMNI9 wirst du..." (homepage section, replaces the trust icons) */
+.lp-wirst{display:grid;gap:22px;align-items:center}
+.lp-wirst .lp-h2 em{font-style:normal;color:var(--lp-gold)}
+.lp-wirst-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.lp-wirst-list li{position:relative;padding-left:32px;font-size:15px;line-height:1.5}
+.lp-wirst-list li:before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M3 10.5l4.5 4.5L17 5' stroke='%23D6A655' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.lp-wirst-img{border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(51,50,64,.15)}
+@media (max-width:420px){.lp-sav-list{grid-template-columns:1fr}.lp-card-price b{font-size:22px}.lp-card{padding:20px 9px 12px}}
+@media (min-width:900px){
+.lp-bens li{font-size:17px}
+.lp-two{max-width:860px;margin:0 auto;gap:28px}
+.lp-card{padding:30px 26px 22px}
+.lp-card-title{font-size:20px}.lp-card-sub,.lp-card-list{font-size:14px}
+.lp-card-price b{font-size:32px}
+.lp-card .lp-cta{font-size:16px}
+.lp-box .lp-cta{min-width:370px}
+.lp-sav{max-width:960px;margin:0 auto;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px 48px;align-items:center}
+.lp-sav>.lp-h2{grid-column:1 / -1}
+.lp-sav-left{grid-column:1}
+.lp-sav-right{grid-column:2}
+.lp-sav-total{width:230px;height:230px}.lp-sav-total b{font-size:42px}
+.lp-endcard{max-width:960px;margin:0 auto;grid-template-columns:1fr 1fr}
+.lp-endcard-img img{aspect-ratio:auto;min-height:100%}
+.lp-endcard-body{padding:44px 40px}
+.lp-endcard .lp-cta{width:100%;min-width:0}
+.lp-wirst{grid-template-columns:1fr 1fr;gap:56px;max-width:1100px;margin:0 auto}
+.lp-wirst .lp-h2{text-align:left}
+.lp-wirst-list li{font-size:16px}
+}
+/* v0.9 fixes: big people creative on mobile, subscription creative shows the jars only */
+@media (max-width:899px){
+.lp-prod{flex-direction:column;align-items:stretch;padding:12px}
+.lp-prod .lp-hero-img{flex:none;max-width:100%!important;width:100%;border-radius:12px}
+.lp-prod-txt{padding:0 4px 4px}
+.lp-card .lp-cta:after{display:none}
+.lp-card .lp-cta{font-size:13px;padding:10px 8px}
+}
+.lp-card-img{aspect-ratio:750/450}
+.lp-card:not(.lp-best) .lp-card-img img{object-fit:cover;object-position:50% 45%}
+.lp-best .lp-card-img img{object-position:50% 0;transform:none}
+.lp-faq .lp-p a{color:var(--lp-ink)}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
@@ -255,28 +360,33 @@
   <section class="lp-hero lp-sec">
     <div class="lp-wrap">
       <div class="lp-hero-txt">
-      <h1 class="lp-h1">Dein OMNI9 Vorrat wird knapp?</h1>
-      <p class="lp-p">Dein t&auml;glicher L&ouml;ffel geh&ouml;rt inzwischen dazu. F&uuml;lle deinen Vorrat auf, bevor dein Glas leer ist.</p>
+      <h1 class="lp-h1">Langfristig mehr Energie f&uuml;r das, was dir wichtig ist</h1>
+      <!-- 3 long-term benefits with icons (Niklas: replaces the text under the headline). Copy from the OMNI9 GPT, round 2. -->
+      <ul class="lp-p lp-bens">
+        <li><span class="lp-ben-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2M6 10v4M10 10v4M14 10v4"/></svg></span><span>Stabile Energie &uuml;ber den Tag</span></li>
+        <li><span class="lp-ben-ico"><svg viewBox="0 0 24 24"><path d="M9 3v3a3 3 0 0 1-3 3v3a7 7 0 0 0 7 7h1a6 6 0 0 0 6-6v-1a4 4 0 0 0-4-4h-1a2 2 0 0 0-2 2"/></svg></span><span>Ein ruhigerer Darm</span></li>
+        <li><span class="lp-ben-ico"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span>Erholsamer Schlaf</span></li>
+      </ul>
       <div class="lp-prod">
-      <!-- hero image = the refill email hero (Klaviyo e03 / 6140d6f7), same imagery as the email. SHOPIFY: upload to Files and replace src -->
-        <div class="lp-hero-img"><img src="img/omni9-hero-email.webp" alt="OMNI9 Glas mit goldenem L&ouml;ffel auf einem Stein bei Nacht" width="790" height="682" loading="eager"></div>
-              <div class="lp-prod-txt">
-      <div class="lp-price"><span class="lp-price-now">84,00&nbsp;&euro;</span><span class="lp-pill">&minus;5&nbsp;&euro; &middot; Code <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
-      <p class="lp-price-note">OMNI9 &middot; 30 Portionen: einmalig 84&nbsp;&euro; mit 5&nbsp;&euro; Rabatt oder 69&nbsp;&euro; pro Glas mit automatischer Lieferung.</p>
+        <!-- human creative with OMNI9 (Niklas): OMNI9 Klaviyo image library, used unedited, dark email fade cropped off by CSS. SHOPIFY: upload to Files and replace src -->
+        <div class="lp-hero-img lp-people"><img src="img/omni9-kunden.webp" alt="Drei OMNI9 Kunden mit ihrem Glas, eine Frau nimmt ihren L&ouml;ffel" width="628" height="561" loading="eager"></div>
+        <div class="lp-prod-txt">
+          <div class="lp-price"><span class="lp-price-was">89,00&nbsp;&euro;</span><span class="lp-price-now">84,00&nbsp;&euro;</span><span class="lp-pill">&minus;5&nbsp;&euro; &middot; Code <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
+          <p class="lp-price-note">OMNI9 &middot; 30 Portionen: einmalig 84&nbsp;&euro; mit 5&nbsp;&euro; Rabatt oder 69&nbsp;&euro; pro Glas mit automatischer Lieferung.</p>
         </div>
       </div>
-      <a class="lp-cta" data-lp-cta href="/cart/56780244877660:1?discount=QF4ZJ68D2AJP"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
-    </div>
+      <a class="lp-cta" href="/cart/56780244877660:1?discount=QF4ZJ68D2AJP"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
+      </div>
     </div>
   </section>
 
-  <!-- 2 REVIEWS FROM LONG-TERM CUSTOMERS, directly below the hero -->
+  <!-- 2 REVIEWS FROM LONG-TERM CUSTOMERS (approved; headline from Niklas) -->
   <section class="lp-sec" id="lp-reviews" style="padding-top:8px">
     <div class="lp-wrap">
       <div class="lp-rating" style="justify-content:center"><span class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="lp-slot">[MISSING: 4,7 / 5 aus 232 Bewertungen (Loox), Freigabe offen]</span></div>
-      <h2 class="lp-h2">Wenn aus Testen eine Routine wird</h2>
+      <h2 class="lp-h2">Warum unsere Kunden bei OMNI9 bleiben&hellip;</h2>
       <div class="lp-revs">
-        <!-- REAL reviews from Loox (omni9.de/pages/bewertungen), verbatim, all 5/5 + verified. Selection to be confirmed by Niklas. -->
+        <!-- REAL reviews from Loox (omni9.de/pages/bewertungen), verbatim, all 5/5 + verified -->
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Seit 2 Monaten dabei</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Ich bin Krankenschwester und arbeite Schicht. Mein K&ouml;rper war die letzten Jahre komplett durch den Wind. Keine Energie, Darm spielte verr&uuml;ckt, st&auml;ndig krank. Ich hab mein Glas jetzt zwei Monate und ich kann sagen es ist das erste Produkt, dass ich nicht nach 3 Wochen wieder abgebrochen habe. Nicht weil ich m&uuml;sste sondern weil ich einfach einen Unterschied merke. Weiterempfehlung von meiner Seite auf jeden Fall&ldquo;</p><div class="lp-rev-by"><b>Annika</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">3. Doppelpackung</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Das ist schon meine dritte Doppel Packung und bin mit dem Produkt sehr, sehr zufrieden und werde weiter nehmen...&ldquo;</p><div class="lp-rev-by"><b>Rieke Jansen</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Im Abo</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;bestelle immer im Abo, Nachschub kommt immer p&uuml;nktlich an. Bin zufrieden :)&ldquo;</p><div class="lp-rev-by"><b>Christina</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
@@ -284,11 +394,10 @@
     </div>
   </section>
 
-  <!-- EXTRA (client brief): LONG-TERM BENEFITS. Not part of template 08. -->
+  <!-- EXTRA (client brief): LONG-TERM BENEFITS. No feedback from Niklas, unchanged. -->
   <section class="lp-sec" id="lp-longterm" style="padding-top:0">
     <div class="lp-wrap">
       <div class="lp-dark">
-        <!-- AI image (OpenAI, guide p8 Part A+B), real jar from reference. SHOPIFY: upload to Files and replace src with the cdn.shopify.com URL -->
         <div class="lp-dark-img"><img src="img/omni9-morgenroutine.webp" alt="Frau nimmt morgens in der K&uuml;che einen L&ouml;ffel OMNI9 aus dem Glas" width="1200" height="800" loading="lazy"></div>
         <div class="lp-dark-head"><span class="lp-kicker">Bioaktives Zellregenerations-System</span>
         <h2 class="lp-h2">Warum sich Weiternehmen lohnt</h2></div>
@@ -307,86 +416,144 @@
     </div>
   </section>
 
-  <!-- 3 CHOOSE A QUANTITY: larger pack recommended -->
+  <!-- 3 TWO OPTIONS ONLY (Niklas): one-time left, subscription right. Each card opens the product page.
+       Left: /discount/ link sets code QF4ZJ68D2AJP, checkout then shows 89 -> 84 (click-tested 2026-11-01).
+       Right: product page opens with "Automatische Lieferung" preselected; the free Immun Booster is added there by Kaching. -->
   <section class="lp-sec" id="lp-buy" style="padding-top:0">
     <div class="lp-wrap">
       <h2 class="lp-h2">Wie viel Vorrat darf es sein?</h2>
-      <div class="lp-opts" role="radiogroup" aria-label="Menge">
-        <button type="button" class="lp-opt" role="radio" aria-checked="false" data-lp-variant="56780244877660" data-lp-total="84,00" data-lp-label="1 Glas">
-          <img src="https://cdn.shopify.com/s/files/1/0989/0621/0652/files/OMNI9_Hauptproduktbild.png?v=1773233586&width=200" alt="OMNI9 1 Glas" width="64" height="64" loading="lazy">
-          <span class="lp-opt-main"><span class="lp-opt-title">1 Glas</span><span class="lp-opt-sub">30 Portionen &middot; 84&nbsp;&euro; einmalig &middot; 84&nbsp;&euro; pro Glas.</span></span>
-          <span class="lp-opt-price">84&nbsp;&euro;</span>
-        </button>
-        <button type="button" class="lp-opt" role="radio" aria-checked="false" data-lp-variant="56710895862108" data-lp-total="244,00" data-lp-label="3er Set + gratis Immun Booster" data-lp-only-once="true">
-          <img src="https://cdn.shopify.com/s/files/1/0989/0621/0652/files/OMNI9_Bundle.png?v=1771358846&width=200" alt="OMNI9 3er Set mit Immun Booster" width="64" height="64" loading="lazy">
-          <span class="lp-opt-main"><span class="lp-opt-title">3er Set + gratis Immun Booster</span><span class="lp-opt-sub">244&nbsp;&euro; einmalig &middot; 81,33&nbsp;&euro; pro Glas.</span></span>
-          <span class="lp-opt-price">244&nbsp;&euro;</span>
-        </button>
-        <button type="button" class="lp-opt" role="radio" aria-checked="true" data-lp-variant="56710921224540" data-lp-total="394,00" data-lp-label="5er Set + 2 gratis Immun Booster" data-lp-only-once="true">
-          <span class="lp-flag">Unsere Empfehlung</span>
-          <img src="https://cdn.shopify.com/s/files/1/0989/0621/0652/files/OMNI9_Bundle2.png?v=1771358862&width=200" alt="OMNI9 5er Set mit 2 Immun Boostern" width="64" height="64" loading="lazy">
-          <span class="lp-opt-main"><span class="lp-opt-title">5er Set + 2 gratis Immun Booster</span><span class="lp-opt-sub">394&nbsp;&euro; einmalig &middot; 78,80&nbsp;&euro; pro Glas.</span></span>
-          <span class="lp-opt-price">394&nbsp;&euro;</span>
-        </button>
+      <div class="lp-two">
+        <a class="lp-card" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660">
+          <div class="lp-card-img"><img src="https://cdn.shopify.com/s/files/1/0989/0621/0652/files/OMNI9_Hauptproduktbild.png?v=1773233586&width=500" alt="OMNI9 1 Glas" width="500" height="500" loading="lazy"></div>
+          <p class="lp-card-title">1 Glas</p>
+          <p class="lp-card-sub">30 Portionen &middot; 84&nbsp;&euro; einmalig &middot; 84&nbsp;&euro; pro Glas.</p>
+          <div class="lp-card-price"><s>89&nbsp;&euro;</s><b>84&nbsp;&euro;</b></div>
+          <p class="lp-card-unit">einmalig</p>
+          <span class="lp-cta"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></span>
+        </a>
+        <a class="lp-card lp-best" href="/products/omni9-bioaktive-nutrition?variant=56780244877660">
+          <span class="lp-flag">Bester Preis</span>
+          <!-- subscription creative from the OMNI9 emails (Klaviyo), top part only (price + button area cropped off by CSS) -->
+          <div class="lp-card-img"><img src="img/omni9-abo.webp" alt="OMNI9 und gratis Immun Booster, gratis Versand" width="750" height="937" loading="lazy"></div>
+          <p class="lp-card-title">Automatische Lieferung</p>
+          <p class="lp-card-sub">1 Glas f&uuml;r 69&nbsp;&euro; pro Lieferung.</p>
+          <div class="lp-card-price"><s>89&nbsp;&euro;</s><b>69&nbsp;&euro;</b></div>
+          <p class="lp-card-unit">pro Lieferung</p>
+          <!-- wording from the OMNI9 subscription email creative + the product page -->
+          <ul class="lp-card-list">
+            <li>20&nbsp;&euro; weniger pro Glas</li>
+            <li>Kostenloser Versand</li>
+            <li>Automatisch nach Hause</li>
+            <li>+ Dein Gratis-Geschenk: OMNI9 Immun Booster im Wert von 59&nbsp;&euro;</li>
+          </ul>
+          <span class="lp-cta"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></span>
+        </a>
       </div>
-      <p class="lp-note">Die einmaligen Preise enthalten deinen 5&nbsp;&euro; Rabatt. Code <span class="lp-code">QF4ZJ68D2AJP</span> wird automatisch angewendet. G&uuml;ltig bis: <span class="lp-slot">[MISSING: Angebotsfrist]</span>.</p>
-      <p class="lp-note">Lieber automatisch nachf&uuml;llen lassen? 1 Glas f&uuml;r 69&nbsp;&euro; pro Lieferung. Der 5&nbsp;&euro; Code gilt ausschlie&szlig;lich f&uuml;r Einmalk&auml;ufe.</p>
+      <p class="lp-note">Die einmaligen Preise enthalten deinen 5&nbsp;&euro; Rabatt. Code <span class="lp-code">QF4ZJ68D2AJP</span> wird automatisch angewendet. Der 5&nbsp;&euro; Code gilt ausschlie&szlig;lich f&uuml;r Einmalk&auml;ufe.</p>
     </div>
   </section>
 
-  <!-- 4 SUBSCRIPTION CALCULATOR: savings per year, rhythm selectable -->
+  <!-- 4 SUBSCRIPTION CALCULATOR: rhythm selectable, now clickable -->
   <section class="lp-sec" style="padding-top:0">
     <div class="lp-wrap">
-      <div class="lp-box">
+      <div class="lp-box lp-center">
         <h2 class="lp-h2" style="font-size:20px">Was sparst du mit automatischer Lieferung?</h2>
         <p class="lp-p lp-center">W&auml;hle deinen Lieferrhythmus. Du zahlst 69&nbsp;&euro; pro Glas und sparst je Lieferung 20&nbsp;&euro; gegen&uuml;ber dem Einzelkauf ohne Rabatt.</p>
-        <div class="lp-mode" role="group" aria-label="Kaufart">
-          <button type="button" data-lp-mode="sub" aria-pressed="false">Automatische Lieferung</button>
-          <button type="button" data-lp-mode="once" aria-pressed="true">Einmalig</button>
-        </div>
         <div class="lp-rhythm" role="group" aria-label="Lieferrhythmus">
-          <button type="button" data-lp-plan="692319322460" data-lp-rhythm="alle 2 Wochen" aria-pressed="false">Alle 2 Wochen</button>
-          <button type="button" data-lp-plan="692303823196" data-lp-rhythm="alle 4 Wochen" aria-pressed="true">Alle 4 Wochen</button>
-          <button type="button" data-lp-plan="692318962012" data-lp-rhythm="alle 6 Wochen" aria-pressed="false">Alle 6 Wochen</button>
+          <button type="button" data-lp-plan="692319322460" aria-pressed="false">Alle 2 Wochen</button>
+          <button type="button" data-lp-plan="692303823196" aria-pressed="true">Alle 4 Wochen</button>
+          <button type="button" data-lp-plan="692318962012" aria-pressed="false">Alle 6 Wochen</button>
         </div>
         <div class="lp-save">
           <p class="lp-p" style="margin:0" data-lp-save-for="692319322460" hidden>26 Lieferungen im Jahr &middot; <b>520&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
           <p class="lp-p" style="margin:0" data-lp-save-for="692303823196">13 Lieferungen im Jahr &middot; <b>260&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
           <p class="lp-p" style="margin:0" data-lp-save-for="692318962012" hidden>Etwa 8&ndash;9 Lieferungen im Jahr &middot; <b>rund 170&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
         </div>
-        <p class="lp-terms"><span class="lp-slot">[MISSING: Abo-Bedingungen in einer Zeile laut AGB (OMNI9 GPT)]</span></p>
         <p class="lp-note" style="margin:0">Ein Glas enth&auml;lt 30 Portionen. W&auml;hle den Rhythmus passend zu deinem Verbrauch.</p>
+        <!-- goes to the product page (subscription preselected, free Immun Booster added there). A direct checkout link would keep the rhythm but drop the gift: open question for Niklas -->
+        <a class="lp-cta" href="/products/omni9-bioaktive-nutrition?variant=56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
       </div>
     </div>
   </section>
 
-  <!-- 5 SUBSCRIPTION OBJECTIONS -->
+  <!-- 5 SUBSCRIPTION OBJECTIONS: answers from the OMNI9 GPT with the AGB section 10 facts -->
   <section class="lp-sec lp-faq" style="padding-top:0">
     <div class="lp-wrap">
       <h2 class="lp-h2">Wie flexibel ist deine automatische Lieferung?</h2>
-      <details><summary>Wie kann ich k&uuml;ndigen?</summary><p class="lp-p"><span class="lp-slot">[MISSING: K&uuml;ndigungsbedingungen und K&uuml;ndigungsweg von OMNI9]</span></p></details>
-      <details><summary>Kann ich eine Lieferung pausieren?</summary><p class="lp-p"><span class="lp-slot">[MISSING: Bedingungen und Vorgehen f&uuml;r Lieferpausen bei OMNI9]</span></p></details>
-      <details><summary>Kann ich den Lieferrhythmus &auml;ndern?</summary><p class="lp-p"><span class="lp-slot">[MISSING: Bedingungen und Vorgehen f&uuml;r Rhythmus&auml;nderungen bei OMNI9]</span></p></details>
+      <details><summary>Wie kann ich k&uuml;ndigen?</summary><p class="lp-p">Nach deiner zweiten Bestellung kannst du dein Abo bequem im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> k&uuml;ndigen. Deine K&uuml;ndigung muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
+      <details><summary>Kann ich eine Lieferung pausieren?</summary><p class="lp-p">Ja, nach deiner zweiten Bestellung kannst du deine Lieferung im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> pausieren. Deine Pausenanfrage muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
+      <details><summary>Kann ich den Lieferrhythmus &auml;ndern?</summary><p class="lp-p">Im Shop stehen dir Lieferungen alle 2, 4 oder 6 Wochen zur Auswahl. Wenn du deinen Rhythmus &auml;ndern m&ouml;chtest, schreib an <a href="mailto:service@omni9.de">service@omni9.de</a>.</p></details>
     </div>
   </section>
 
-  <!-- 6 LOYALTY -->
+  <!-- 6 SAVINGS (Niklas: replaces the loyalty section). Text word for word from the omni9.de homepage section "Mit OMNI9 ersetzt du 16+ Supplements gleichzeitig" -->
   <section class="lp-sec" style="padding-top:0">
     <div class="lp-wrap">
-      <div class="lp-perk">
-        <p class="lp-p" style="margin:0"><b>Dein Vorteil als Bestandskunde</b><br><span class="lp-slot">[MISSING: Treue-Vorteil vom Kunden]</span></p>
+      <div class="lp-sav">
+        <h2 class="lp-h2">Mit OMNI9 ersetzt du 16+ Supplements gleichzeitig</h2>
+        <div class="lp-sav-left">
+          <p class="lp-sav-sub">F&uuml;r den gleichen Effekt brauchst du monatlich:</p>
+          <ul class="lp-sav-list">
+            <li><span>Probiotika</span><span>58&euro;</span></li>
+            <li><span>Curcumin + Piperin</span><span>55&euro;</span></li>
+            <li><span>Pr&auml;biotika</span><span>22&euro;</span></li>
+            <li><span>Omega-3</span><span>29&euro;</span></li>
+            <li><span>Vitamin D3+K2</span><span>25&euro;</span></li>
+            <li><span>Zink, Magnesium</span><span>35&euro;</span></li>
+            <li><span>Vitamin C, B1-B12</span><span>59&euro;</span></li>
+            <li><span>Coenzym-Q10</span><span>39&euro;</span></li>
+            <li><span>Antioxidantien</span><span>29&euro;</span></li>
+            <li><span>Polyphenol</span><span>39&euro;</span></li>
+            <li><span>Adaptogene</span><span>29&euro;</span></li>
+            <li><span>Neuro-/ Fokus Komplex</span><span>65&euro;</span></li>
+          </ul>
+        </div>
+        <div class="lp-sav-right">
+          <div class="lp-sav-rows">
+            <div class="lp-sav-row"><span>Mit Einzel-Supplements</span><b>397,00&euro; | 13,32&euro;/Tag</b></div>
+            <div class="lp-sav-row lp-us"><span>Mit einem Glas OMNI9</span><b>69,00&euro; | 2,30&euro;/Tag</b></div>
+          </div>
+          <div class="lp-sav-total"><span>Dadurch sparst du:</span><b>4.332&euro;</b><span>/ Jahr</span></div>
+          <p class="lp-sav-foot">W&auml;hrend du deinem K&ouml;rper alles gibst, was er braucht.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 7 CTA AND TRUST -->
-  <section class="lp-sec lp-final">
-    <div class="lp-wrap lp-center">
-      <h2 class="lp-h2">Dein n&auml;chstes Glas wartet auf dich</h2>
-      <p class="lp-p">Sorge f&uuml;r Nachschub f&uuml;r deinen t&auml;glichen L&ouml;ffel &ndash; mit deiner gew&auml;hlten Menge oder automatischer Lieferung.</p>
-      <div class="lp-choice"><span data-lp-choice>5er Set + 2 gratis Immun Booster</span><b data-lp-sum>394,00&nbsp;&euro;</b></div>
-      <a class="lp-cta" data-lp-cta data-lp-buy href="/cart/56710921224540:1?discount=QF4ZJ68D2AJP"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
-      <div class="lp-trust"><span class="lp-ico-ship">Versand: DE 3,90&nbsp;&euro; &middot; AT 7,90&nbsp;&euro; &middot; CH 8,90&nbsp;&euro;</span><span class="lp-ico-ret">R&uuml;ckgabe <span class="lp-slot">[MISSING]</span></span><span class="lp-ico-guar">90 Tage Geld-zur&uuml;ck-Garantie <span class="lp-slot">[MISSING: Bedingung laut AGB: ab 3 Gl&auml;sern einmalig, nicht im Abo]</span></span></div>
+  <!-- 7 CTA (Niklas: good idea, more appealing) -->
+  <section class="lp-sec lp-final" style="padding-top:0">
+    <div class="lp-wrap">
+      <div class="lp-endcard">
+        <div class="lp-endcard-img"><img src="img/omni9-hero-email.webp" alt="OMNI9 Glas mit goldenem L&ouml;ffel" width="790" height="682" loading="lazy"></div>
+        <div class="lp-endcard-body">
+          <h2 class="lp-h2">Dein n&auml;chstes Glas wartet auf dich</h2>
+          <p class="lp-p">Sorge f&uuml;r Nachschub f&uuml;r deinen t&auml;glichen L&ouml;ffel &ndash; mit deiner gew&auml;hlten Menge oder automatischer Lieferung.</p>
+          <div class="lp-endprices">
+            <div class="lp-endprice"><small>1 Glas &middot; einmalig</small><s>89&nbsp;&euro;</s><b>84&nbsp;&euro;</b></div>
+            <div class="lp-endprice lp-best"><small>Automatische Lieferung</small><s>89&nbsp;&euro;</s><b>69&nbsp;&euro;</b></div>
+          </div>
+          <a class="lp-cta" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 "MIT OMNI9 WIRST DU..." (Niklas: replaces the trust icons). Text and image from the omni9.de homepage, word for word -->
+  <section class="lp-sec" style="padding-top:0">
+    <div class="lp-wrap">
+      <div class="lp-wirst">
+        <div>
+          <h2 class="lp-h2">Mit <em>OMNI9</em> wirst du...</h2>
+          <ul class="lp-wirst-list">
+            <li><b>Einen ruhigeren Darm und leichteres K&ouml;rpergef&uuml;hl erleben,</b> ohne Bl&auml;hbauch, V&ouml;llegef&uuml;hl oder Unsicherheit nach dem Essen.</li>
+            <li><b>Abends schnell zur Ruhe kommen,</b> ohne dass dein Kopf weiterarbeitet und dein K&ouml;rper im Alarmmodus bleibt.</li>
+            <li><b>Erholsamer schlafen,</b> ohne st&auml;ndig aufzuwachen und morgens das Gef&uuml;hl zu haben, nicht regeneriert zu sein.</li>
+            <li><b>Stabile Energie &uuml;ber den Tag haben,</b> ohne Konzentrationsl&ouml;cher, Leistungseinbr&uuml;che und Mittags-Crash.</li>
+            <li><b>Emotional ausgeglichen bleiben,</b> ohne dass Stress dich sofort aus der Bahn wirft.</li>
+          </ul>
+        </div>
+        <div class="lp-wirst-img"><img src="img/omni9-wirst-du.webp" alt="Frau nimmt OMNI9, entspannte Kollegen im B&uuml;ro" width="900" height="675" loading="lazy"></div>
+      </div>
     </div>
   </section>
 
@@ -396,36 +563,19 @@
 <script>
 (function(){
   var root=document.getElementById('lp-omni9-refill'); if(!root) return;
-  var V1='56780244877660', CODE='QF4ZJ68D2AJP';
-  var st={mode:'once', plan:'692303823196', rhythm:'alle 4 Wochen', variant:'56710921224540', total:'394,00', label:'5er Set + 2 gratis Immun Booster'};
-  var buy=root.querySelector('[data-lp-buy]'), sum=root.querySelector('[data-lp-sum]'), choice=root.querySelector('[data-lp-choice]');
+  var plan='692303823196';
   function render(){
-    root.querySelectorAll('[data-lp-mode]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lp-mode')===st.mode);});
-    root.querySelectorAll('[data-lp-plan]').forEach(function(b){b.setAttribute('aria-pressed',st.mode==='sub'&&b.getAttribute('data-lp-plan')===st.plan);});
-    root.querySelectorAll('[data-lp-save-for]').forEach(function(p){p.hidden=p.getAttribute('data-lp-save-for')!==st.plan;});
-    root.querySelectorAll('[data-lp-variant]').forEach(function(b){
-      b.setAttribute('aria-checked',st.mode==='once'&&b.getAttribute('data-lp-variant')===st.variant);
-      b.setAttribute('aria-disabled',st.mode==='sub'&&b.hasAttribute('data-lp-only-once'));
-    });
-    if(st.mode==='sub'){
-      buy.href='/cart/add?id='+V1+'&quantity=1&selling_plan='+st.plan+'&return_to=/checkout';
-      choice.textContent='1 Glas, automatische Lieferung '+st.rhythm; sum.textContent='69,00 €';
-    }else{
-      buy.href='/cart/'+st.variant+':1?discount='+CODE;
-      choice.textContent=st.label; sum.textContent=st.total+' €';
-    }
+    root.querySelectorAll('[data-lp-plan]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lp-plan')===plan);});
+    root.querySelectorAll('[data-lp-save-for]').forEach(function(p){p.hidden=p.getAttribute('data-lp-save-for')!==plan;});
   }
   root.addEventListener('click',function(e){
     var r=e.target.closest('.lp-rev');
     if(r){r.classList.toggle('lp-open');return;}
-    var m=e.target.closest('[data-lp-mode]');
-    if(m){st.mode=m.getAttribute('data-lp-mode'); render(); return;}
     var p=e.target.closest('[data-lp-plan]');
-    if(p){st.plan=p.getAttribute('data-lp-plan');st.rhythm=p.getAttribute('data-lp-rhythm');st.mode='sub';render();return;}
-    var v=e.target.closest('[data-lp-variant]');
-    if(v){st.variant=v.getAttribute('data-lp-variant');st.total=v.getAttribute('data-lp-total');st.label=v.getAttribute('data-lp-label');st.mode='once';render();}
+    if(p){plan=p.getAttribute('data-lp-plan');render();}
   });
   render();
 })();
 </script>
+
 </body></html>
