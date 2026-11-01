@@ -6,7 +6,7 @@
 @media (max-height:760px) and (max-width:899px){.lp-hero-img{max-width:min(100%,32vh);margin-left:auto;margin-right:auto}.lp-hero{padding-top:10px}}
 @media (min-width:900px){.lp-hero .lp-wrap{max-width:1040px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.lp-hero-img{margin:0;max-width:none}.lp-hero .lp-trust{justify-content:flex-start}}
 </style></head><body>
-<!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.9 (Niklas detailed feedback 2026-11-01; OMNI9 GPT round-2 copy in, word for word) -->
+<!-- OMNI9 Refill LP | Template 08 Reorder LP | HPM | build v0.10 (v0.9 + 5 EUR code shown across the page, Niklas 2026-11-02) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -349,6 +349,32 @@
 .lp-card:not(.lp-best) .lp-card-img img{object-fit:cover;object-position:50% 45%}
 .lp-best .lp-card-img img{object-position:50% 0;transform:none}
 .lp-faq .lp-p a{color:var(--lp-ink)}
+/* v0.10 Niklas 2026-11-02: show the 5 EUR code much more across the page (approved wording only) */
+.lp-hero-img{position:relative}
+.lp-img-badge{position:absolute;top:12px;right:12px;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#e7bd72,#b8863a);color:#22212c;font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px 2px rgba(214,166,85,.7);transform:rotate(-8deg);z-index:2}
+.lp-hero .lp-pill{font-size:15px;padding:7px 14px}
+.lp-hero .lp-pill .lp-code{font-size:14px}
+.lp-coupon{display:grid;grid-template-columns:auto 1fr;gap:14px 18px;align-items:center;max-width:960px;margin:0 auto;padding:20px;border:2px dashed var(--lp-gold);border-radius:18px;background:#fffaf0;position:relative}
+.lp-coupon-amt{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#333240,#636279);color:var(--lp-gold);font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px 1px rgba(214,166,85,.6)}
+.lp-coupon-txt p{margin:0 0 4px;font-size:16px;font-weight:600;line-height:1.45}
+.lp-coupon-txt .lp-code{font-size:16px;background:var(--lp-gold);color:#fff;padding:2px 8px}
+.lp-coupon-txt small{font-size:12.5px;color:var(--lp-ink-2)}
+.lp-coupon .lp-cta{grid-column:1 / -1}
+.lp-card .lp-pill{font-size:11px;padding:4px 9px;margin:0 0 8px}
+.lp-endprice .lp-pill{font-size:10.5px;padding:3px 8px;margin-top:6px}
+.lp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(34,33,44,.97);color:#fff;box-shadow:0 -6px 24px rgba(0,0,0,.25);transform:translateY(110%);transition:transform .25s}
+.lp-sticky.lp-on{transform:none}
+.lp-sticky-txt{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#cfcbe0;line-height:1.3}
+.lp-sticky .lp-pill{font-size:12px;padding:4px 9px;align-self:flex-start}
+.lp-sticky .lp-cta{min-width:0!important;width:auto;flex:0 0 auto;min-height:44px;padding:10px 14px;font-size:14px}
+.lp-legal{padding-bottom:110px}
+@media (max-width:420px){.lp-sticky .lp-cta:after{display:none}.lp-sticky .lp-cta{font-size:13px;padding:10px 12px}.lp-coupon{grid-template-columns:1fr;text-align:center;justify-items:center}}
+@media (min-width:900px){.lp-coupon{grid-template-columns:auto 1fr auto;padding:24px 32px}.lp-coupon .lp-cta{grid-column:auto}.lp-sticky{gap:28px}.lp-sticky-txt{flex-direction:row;align-items:center;gap:12px;font-size:14px}.lp-img-badge{width:96px;height:96px;font-size:28px;top:18px;right:18px}}
+.lp-pill{flex-wrap:wrap;justify-content:center;row-gap:4px;border-radius:14px}
+.lp-nw{white-space:nowrap}
+.lp-card .lp-pill,.lp-endprice .lp-pill{font-size:11px}
+.lp-sticky-txt .lp-pill{font-size:12px}
+@media (max-width:420px){.lp-sticky{gap:8px;padding-left:10px;padding-right:10px}.lp-sticky-txt{font-size:11px}.lp-sticky .lp-cta{font-size:12.5px;padding:10px 10px}}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
@@ -369,9 +395,9 @@
       </ul>
       <div class="lp-prod">
         <!-- human creative with OMNI9 (Niklas): OMNI9 Klaviyo image library, used unedited, dark email fade cropped off by CSS. SHOPIFY: upload to Files and replace src -->
-        <div class="lp-hero-img lp-people"><img src="img/omni9-kunden.webp" alt="Drei OMNI9 Kunden mit ihrem Glas, eine Frau nimmt ihren L&ouml;ffel" width="628" height="561" loading="eager"></div>
+        <div class="lp-hero-img lp-people"><span class="lp-img-badge">&minus;5&nbsp;&euro;</span><img src="img/omni9-kunden.webp" alt="Drei OMNI9 Kunden mit ihrem Glas, eine Frau nimmt ihren L&ouml;ffel" width="628" height="561" loading="eager"></div>
         <div class="lp-prod-txt">
-          <div class="lp-price"><span class="lp-price-was">89,00&nbsp;&euro;</span><span class="lp-price-now">84,00&nbsp;&euro;</span><span class="lp-pill">&minus;5&nbsp;&euro; &middot; Code <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
+          <div class="lp-price"><span class="lp-price-was">89,00&nbsp;&euro;</span><span class="lp-price-now">84,00&nbsp;&euro;</span><span class="lp-pill"><span class="lp-nw">&minus;5&nbsp;&euro; &middot; Code</span> <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
           <p class="lp-price-note">OMNI9 &middot; 30 Portionen: einmalig 84&nbsp;&euro; mit 5&nbsp;&euro; Rabatt oder 69&nbsp;&euro; pro Glas mit automatischer Lieferung.</p>
         </div>
       </div>
@@ -390,6 +416,17 @@
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Seit 2 Monaten dabei</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Ich bin Krankenschwester und arbeite Schicht. Mein K&ouml;rper war die letzten Jahre komplett durch den Wind. Keine Energie, Darm spielte verr&uuml;ckt, st&auml;ndig krank. Ich hab mein Glas jetzt zwei Monate und ich kann sagen es ist das erste Produkt, dass ich nicht nach 3 Wochen wieder abgebrochen habe. Nicht weil ich m&uuml;sste sondern weil ich einfach einen Unterschied merke. Weiterempfehlung von meiner Seite auf jeden Fall&ldquo;</p><div class="lp-rev-by"><b>Annika</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">3. Doppelpackung</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;Das ist schon meine dritte Doppel Packung und bin mit dem Produkt sehr, sehr zufrieden und werde weiter nehmen...&ldquo;</p><div class="lp-rev-by"><b>Rieke Jansen</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
         <article class="lp-rev"><div class="lp-rev-head"><span class="lp-rev-tag">Im Abo</span><div class="lp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><p class="lp-rev-txt">&bdquo;bestelle immer im Abo, Nachschub kommt immer p&uuml;nktlich an. Bin zufrieden :)&ldquo;</p><div class="lp-rev-by"><b>Christina</b> &middot; <span class="lp-verified">Verifiziert</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 EUR CODE as a coupon (Niklas 2026-11-02), approved wording from section 3 -->
+  <section class="lp-sec" style="padding-top:0">
+    <div class="lp-wrap">
+      <div class="lp-coupon">
+        <div class="lp-coupon-amt">&minus;5&nbsp;&euro;</div>
+        <div class="lp-coupon-txt"><p>Die einmaligen Preise enthalten deinen 5&nbsp;&euro; Rabatt. Code <span class="lp-code">QF4ZJ68D2AJP</span> wird automatisch angewendet.</p><small>Der 5&nbsp;&euro; Code gilt ausschlie&szlig;lich f&uuml;r Einmalk&auml;ufe.</small></div>
+        <a class="lp-cta" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
       </div>
     </div>
   </section>
@@ -427,6 +464,7 @@
           <div class="lp-card-img"><img src="https://cdn.shopify.com/s/files/1/0989/0621/0652/files/OMNI9_Hauptproduktbild.png?v=1773233586&width=500" alt="OMNI9 1 Glas" width="500" height="500" loading="lazy"></div>
           <p class="lp-card-title">1 Glas</p>
           <p class="lp-card-sub">30 Portionen &middot; 84&nbsp;&euro; einmalig &middot; 84&nbsp;&euro; pro Glas.</p>
+          <span class="lp-pill"><span class="lp-nw">&minus;5&nbsp;&euro; &middot; Code</span> <span class="lp-code">QF4ZJ68D2AJP</span></span>
           <div class="lp-card-price"><s>89&nbsp;&euro;</s><b>84&nbsp;&euro;</b></div>
           <p class="lp-card-unit">einmalig</p>
           <span class="lp-cta"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></span>
@@ -529,7 +567,7 @@
           <h2 class="lp-h2">Dein n&auml;chstes Glas wartet auf dich</h2>
           <p class="lp-p">Sorge f&uuml;r Nachschub f&uuml;r deinen t&auml;glichen L&ouml;ffel &ndash; mit deiner gew&auml;hlten Menge oder automatischer Lieferung.</p>
           <div class="lp-endprices">
-            <div class="lp-endprice"><small>1 Glas &middot; einmalig</small><s>89&nbsp;&euro;</s><b>84&nbsp;&euro;</b></div>
+            <div class="lp-endprice"><small>1 Glas &middot; einmalig</small><s>89&nbsp;&euro;</s><b>84&nbsp;&euro;</b><br><span class="lp-pill"><span class="lp-nw">&minus;5&nbsp;&euro; &middot; Code</span> <span class="lp-code">QF4ZJ68D2AJP</span></span></div>
             <div class="lp-endprice lp-best"><small>Automatische Lieferung</small><s>89&nbsp;&euro;</s><b>69&nbsp;&euro;</b></div>
           </div>
           <a class="lp-cta" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
@@ -557,6 +595,12 @@
     </div>
   </section>
 
+  <!-- sticky 5 EUR bar: shows once the hero button is out of view, hides at the final card -->
+  <div class="lp-sticky" aria-hidden="true">
+    <div class="lp-sticky-txt"><span class="lp-pill"><span class="lp-nw">&minus;5&nbsp;&euro; &middot; Code</span> <span class="lp-code">QF4ZJ68D2AJP</span></span><span>wird automatisch angewendet</span></div>
+    <a class="lp-cta" tabindex="-1" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
+  </div>
+
   <div class="lp-legal"><a href="/policies/legal-notice">Impressum</a> &middot; <a href="/policies/privacy-policy">Datenschutz</a> &middot; <a href="/policies/terms-of-service">AGB</a></div>
 </div>
 
@@ -575,6 +619,13 @@
     if(p){plan=p.getAttribute('data-lp-plan');render();}
   });
   render();
+  var bar=root.querySelector('.lp-sticky'), heroCta=root.querySelector('.lp-hero .lp-cta'), end=root.querySelector('.lp-endcard');
+  if(bar&&heroCta&&end&&'IntersectionObserver' in window){
+    var vis={hero:true,end:false};
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target===end?'end':'hero']=e.isIntersecting;});
+      var on=!vis.hero&&!vis.end&&heroCta.getBoundingClientRect().top<0; bar.classList.toggle('lp-on',on); bar.setAttribute('aria-hidden',!on);});
+    io.observe(heroCta); io.observe(end);
+  }
 })();
 </script>
 
