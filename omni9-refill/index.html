@@ -376,6 +376,23 @@
 .lp-sticky-txt .lp-pill{font-size:12px}
 @media (max-width:420px){.lp-sticky{gap:8px;padding-left:10px;padding-right:10px}.lp-sticky-txt{font-size:11px}.lp-sticky .lp-cta{font-size:12.5px;padding:10px 10px}}
 @media (max-width:899px){.lp-endcard-img img{aspect-ratio:790/682;object-fit:cover;object-position:50% 50%}}
+/* v0.11 Niklas 2026-11-02: package cards, merged savings + final card */
+.lp-pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 12px;align-items:stretch}
+.lp-pkg{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;border:2px solid var(--lp-line);background:#fff;border-radius:12px;padding:18px 4px 12px;font-family:'Instrument Sans',Arial,sans-serif;color:var(--lp-ink);cursor:pointer;text-align:center;transition:border-color .15s,box-shadow .15s}
+.lp-pkg-t{font-weight:700;font-size:14px;line-height:1.2}
+.lp-pkg-p{font-size:13px;color:var(--lp-ink-2);margin-top:4px}.lp-pkg-p b{font-size:22px;color:var(--lp-ink)}
+.lp-pkg-u{font-size:11.5px;color:var(--lp-ink-2)}
+.lp-pkg-n{font-size:11.5px;line-height:1.3;margin-top:6px;color:var(--lp-ink-2)}
+.lp-pkg-s{font-size:12px;line-height:1.3}.lp-pkg-s b{color:var(--lp-green)}
+.lp-pkg[aria-pressed=true]{border-color:var(--lp-ink);box-shadow:0 8px 22px rgba(51,50,64,.16)}
+.lp-pkg-best{border-color:var(--lp-gold)}
+.lp-pkg-best[aria-pressed=true]{border-color:var(--lp-gold);box-shadow:0 0 15px 1px rgba(214,166,85,.45)}
+.lp-pkg .lp-flag{top:-10px}
+.lp-merge{border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(51,50,64,.2);background:#fff}
+.lp-merge .lp-sav{border:0;border-radius:0;box-shadow:none;max-width:none;margin:0;padding-bottom:26px}
+.lp-merge .lp-endcard{border-radius:0;box-shadow:none;max-width:none;margin:0}
+@media (max-width:420px){.lp-pkgs{gap:6px}.lp-pkg{padding:18px 2px 10px}.lp-pkg-t{font-size:12.5px}.lp-pkg-p b{font-size:19px}.lp-pkg-n,.lp-pkg-s,.lp-pkg-u{font-size:10.5px}.lp-pkg .lp-flag{font-size:9px;padding:3px 7px}}
+@media (min-width:900px){.lp-pkgs{gap:16px;max-width:760px;margin:22px auto 14px}.lp-pkg{padding:24px 12px 16px}.lp-pkg-t{font-size:17px}.lp-pkg-p b{font-size:28px}.lp-pkg-n,.lp-pkg-s{font-size:14px}.lp-merge{max-width:960px;margin:0 auto}}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
@@ -492,22 +509,17 @@
     </div>
   </section>
 
-  <!-- 4 SUBSCRIPTION CALCULATOR: rhythm selectable, now clickable -->
+  <!-- 4 SUBSCRIPTION CALCULATOR as package cards, 4 Wochen flagged (Niklas 2026-11-02) -->
   <section class="lp-sec" style="padding-top:0">
     <div class="lp-wrap">
       <div class="lp-box lp-center">
         <h2 class="lp-h2" style="font-size:20px">Was sparst du mit automatischer Lieferung?</h2>
         <p class="lp-p lp-center">W&auml;hle deinen Lieferrhythmus. Du zahlst 69&nbsp;&euro; pro Glas und sparst je Lieferung 20&nbsp;&euro; gegen&uuml;ber dem Einzelkauf ohne Rabatt.</p>
-        <div class="lp-rhythm" role="group" aria-label="Lieferrhythmus">
-          <button type="button" data-lp-plan="692319322460" aria-pressed="false">Alle 2 Wochen</button>
-          <button type="button" data-lp-plan="692303823196" aria-pressed="true">Alle 4 Wochen</button>
-          <button type="button" data-lp-plan="692318962012" aria-pressed="false">Alle 6 Wochen</button>
-        </div>
-        <div class="lp-save">
-          <p class="lp-p" style="margin:0" data-lp-save-for="692319322460" hidden>26 Lieferungen im Jahr &middot; <b>520&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
-          <p class="lp-p" style="margin:0" data-lp-save-for="692303823196">13 Lieferungen im Jahr &middot; <b>260&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
-          <p class="lp-p" style="margin:0" data-lp-save-for="692318962012" hidden>Etwa 8&ndash;9 Lieferungen im Jahr &middot; <b>rund 170&nbsp;&euro;</b> Ersparnis pro Jahr.</p>
-        </div>
+        <div class="lp-pkgs" role="group" aria-label="Lieferrhythmus">
+          <button type="button" class="lp-pkg" data-lp-plan="692319322460" aria-pressed="false"><span class="lp-pkg-t">Alle 2 Wochen</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> <b>69&nbsp;&euro;</b></span><span class="lp-pkg-u">pro Glas</span><span class="lp-pkg-n">26 Lieferungen im Jahr</span><span class="lp-pkg-s"><b>520&nbsp;&euro;</b> Ersparnis pro Jahr</span></button>
+          <button type="button" class="lp-pkg lp-pkg-best" data-lp-plan="692303823196" aria-pressed="true"><span class="lp-flag">Am beliebtesten</span><span class="lp-pkg-t">Alle 4 Wochen</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> <b>69&nbsp;&euro;</b></span><span class="lp-pkg-u">pro Glas</span><span class="lp-pkg-n">13 Lieferungen im Jahr</span><span class="lp-pkg-s"><b>260&nbsp;&euro;</b> Ersparnis pro Jahr</span></button>
+          <button type="button" class="lp-pkg" data-lp-plan="692318962012" aria-pressed="false"><span class="lp-pkg-t">Alle 6 Wochen</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> <b>69&nbsp;&euro;</b></span><span class="lp-pkg-u">pro Glas</span><span class="lp-pkg-n">Etwa 8&ndash;9 Lieferungen im Jahr</span><span class="lp-pkg-s"><b>rund 170&nbsp;&euro;</b> Ersparnis pro Jahr</span></button>
+          </div>
         <p class="lp-note" style="margin:0">Ein Glas enth&auml;lt 30 Portionen. W&auml;hle den Rhythmus passend zu deinem Verbrauch.</p>
         <!-- goes to the product page (subscription preselected, free Immun Booster added there). A direct checkout link would keep the rhythm but drop the gift: open question for Niklas -->
         <a class="lp-cta" href="/products/omni9-bioaktive-nutrition?variant=56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
@@ -515,19 +527,13 @@
     </div>
   </section>
 
-  <!-- 5 SUBSCRIPTION OBJECTIONS: answers from the OMNI9 GPT with the AGB section 10 facts -->
-  <section class="lp-sec lp-faq" style="padding-top:0">
-    <div class="lp-wrap">
-      <h2 class="lp-h2">Wie flexibel ist deine automatische Lieferung?</h2>
-      <details><summary>Wie kann ich k&uuml;ndigen?</summary><p class="lp-p">Nach deiner zweiten Bestellung kannst du dein Abo bequem im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> k&uuml;ndigen. Deine K&uuml;ndigung muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
-      <details><summary>Kann ich eine Lieferung pausieren?</summary><p class="lp-p">Ja, nach deiner zweiten Bestellung kannst du deine Lieferung im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> pausieren. Deine Pausenanfrage muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
-      <details><summary>Kann ich den Lieferrhythmus &auml;ndern?</summary><p class="lp-p">Im Shop stehen dir Lieferungen alle 2, 4 oder 6 Wochen zur Auswahl. Wenn du deinen Rhythmus &auml;ndern m&ouml;chtest, schreib an <a href="mailto:service@omni9.de">service@omni9.de</a>.</p></details>
-    </div>
-  </section>
 
-  <!-- 6 SAVINGS (Niklas: replaces the loyalty section). Text word for word from the omni9.de homepage section "Mit OMNI9 ersetzt du 16+ Supplements gleichzeitig" -->
-  <section class="lp-sec" style="padding-top:0">
+
+
+  <!-- 6+7 SAVINGS + FINAL CTA as one unit (Niklas 2026-11-02: merge, keep both concepts). Savings text word for word from the omni9.de homepage -->
+  <section class="lp-sec lp-final" style="padding-top:0">
     <div class="lp-wrap">
+      <div class="lp-merge">
       <div class="lp-sav">
         <h2 class="lp-h2">Mit OMNI9 ersetzt du 16+ Supplements gleichzeitig</h2>
         <div class="lp-sav-left">
@@ -556,12 +562,6 @@
           <p class="lp-sav-foot">W&auml;hrend du deinem K&ouml;rper alles gibst, was er braucht.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 7 CTA (Niklas: good idea, more appealing) -->
-  <section class="lp-sec lp-final" style="padding-top:0">
-    <div class="lp-wrap">
       <div class="lp-endcard">
         <div class="lp-endcard-img"><img src="img/omni9-hero-email.webp" alt="OMNI9 Glas mit goldenem L&ouml;ffel" width="790" height="682" loading="lazy"></div>
         <div class="lp-endcard-body">
@@ -573,6 +573,7 @@
           </div>
           <a class="lp-cta" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -601,6 +602,20 @@
     <div class="lp-sticky-txt"><span class="lp-pill"><span class="lp-nw">&minus;5&nbsp;&euro; &middot; Code</span> <span class="lp-code">QF4ZJ68D2AJP</span></span><span>wird automatisch angewendet</span></div>
     <a class="lp-cta" tabindex="-1" href="/discount/QF4ZJ68D2AJP?redirect=%2Fproducts%2Fomni9-bioaktive-nutrition%3Fvariant%3D56780244877660"><span class="lp-cta-txt">Jetzt OMNI9 nachbestellen</span></a>
   </div>
+
+  <!-- FAQ (Niklas 2026-11-02: moved to the end, plus shop FAQ). First 3 = OMNI9 GPT answers (AGB section 10); last 4 = omni9.de "Häufig gestellte Fragen", word for word -->
+  <section class="lp-sec lp-faq" style="padding-top:0">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">H&auml;ufig gestellte Fragen</h2>
+      <details><summary>Wie kann ich k&uuml;ndigen?</summary><p class="lp-p">Nach deiner zweiten Bestellung kannst du dein Abo bequem im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> k&uuml;ndigen. Deine K&uuml;ndigung muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
+      <details><summary>Kann ich eine Lieferung pausieren?</summary><p class="lp-p">Ja, nach deiner zweiten Bestellung kannst du deine Lieferung im Kundenkonto oder per E-Mail an <a href="mailto:service@omni9.de">service@omni9.de</a> pausieren. Deine Pausenanfrage muss mindestens 7 Tage vor dem n&auml;chsten geplanten Versand beziehungsweise der n&auml;chsten Abbuchung eingehen.</p></details>
+      <details><summary>Kann ich den Lieferrhythmus &auml;ndern?</summary><p class="lp-p">Im Shop stehen dir Lieferungen alle 2, 4 oder 6 Wochen zur Auswahl. Wenn du deinen Rhythmus &auml;ndern m&ouml;chtest, schreib an <a href="mailto:service@omni9.de">service@omni9.de</a>.</p></details>
+      <details><summary>Wie nehme ich OMNI9 ein?</summary><p class="lp-p">1 Teel&ouml;ffel pro Tag. Kein Protokoll, kein Pillenregal, kein R&auml;tselraten. Genau daf&uuml;r ist es gebaut.</p></details>
+      <details><summary>Kann ich OMNI9 mit meinen Supplements kombinieren?</summary><p class="lp-p">Ja &ndash; aber der Punkt von OMNI9 ist, dass du nicht 8&ndash;16 Dinge parallel brauchst. Viele nutzen OMNI9 als Basis, die den Rest ersetzt oder stark reduziert.</p></details>
+      <details><summary>Was, wenn ich einen empfindlichen Darm habe?</summary><p class="lp-p">Gerade deshalb ist das Darm-Fundament eingebaut. Wenn du sensibel bist, starte die ersten Tage mit weniger und steigere dann auf die Standardmenge &ndash; damit dein System sich sauber einpendelt.</p></details>
+      <details><summary>Macht mich das dicker oder schie&szlig;t meinen Blutzucker hoch?</summary><p class="lp-p">OMNI9 ist als kleines t&auml;gliches Ritual konzipiert &ndash; nicht als &bdquo;Snack&ldquo;. Wenn du OMNI9 normal in deinen Alltag integrierst, ist es kein &bdquo;Zucker-Upgrade&ldquo;, sondern ein System-Upgrade.</p></details>
+    </div>
+  </section>
 
   <div class="lp-legal"><a href="/policies/legal-notice">Impressum</a> &middot; <a href="/policies/privacy-policy">Datenschutz</a> &middot; <a href="/policies/terms-of-service">AGB</a></div>
 </div>
