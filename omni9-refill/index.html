@@ -404,6 +404,11 @@
 .lp-sav-row.lp-us-2{background:#4a4858}
 @media (max-width:420px){.lp-pkg-big{font-size:19px}.lp-pkg-p{font-size:10.5px}}
 @media (min-width:900px){.lp-pkg-big{font-size:34px}.lp-pkg-p{font-size:13px}.lp-pkg-n{font-size:14px}}
+/* customer feedback 2026-11-04: "Du sparst" label so the big number is not read as the price */
+.lp-pkg-save{font-size:13px;font-weight:700;color:var(--lp-green);margin-top:6px;line-height:1.2}
+.lp-pkg .lp-pkg-big{margin-top:1px}
+@media (max-width:420px){.lp-pkg-save{font-size:11.5px}}
+@media (min-width:900px){.lp-pkg-save{font-size:15px}}
 </style>
 
 <div class="lp-root" id="lp-omni9-refill">
@@ -525,11 +530,11 @@
     <div class="lp-wrap">
       <div class="lp-box lp-center">
         <h2 class="lp-h2" style="font-size:20px">Was sparst du mit automatischer Lieferung?</h2>
-        <p class="lp-p lp-center">W&auml;hle deinen Lieferrhythmus. Du zahlst 69&nbsp;&euro; pro Glas und sparst je Lieferung 15&nbsp;&euro; gegen&uuml;ber dem Einzelkauf mit 5&nbsp;&euro; Code.</p>
+        <p class="lp-p lp-center">W&auml;hle deinen Lieferrhythmus. Du zahlst 69&nbsp;&euro; statt 89&nbsp;&euro; pro Glas.</p>
         <div class="lp-pkgs" role="group" aria-label="Lieferrhythmus">
-          <button type="button" class="lp-pkg" data-lp-plan="692319322460" aria-pressed="false"><span class="lp-pkg-t">Alle 2 Wochen</span><span class="lp-pkg-big">390&nbsp;&euro;</span><span class="lp-pkg-u">Ersparnis pro Jahr</span><span class="lp-pkg-bar"><i style="width:100%"></i></span><span class="lp-pkg-n">26 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
-          <button type="button" class="lp-pkg lp-pkg-best" data-lp-plan="692303823196" aria-pressed="true"><span class="lp-flag">Am beliebtesten</span><span class="lp-pkg-t">Alle 4 Wochen</span><span class="lp-pkg-big">195&nbsp;&euro;</span><span class="lp-pkg-u">Ersparnis pro Jahr</span><span class="lp-pkg-bar"><i style="width:50%"></i></span><span class="lp-pkg-n">13 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
-          <button type="button" class="lp-pkg" data-lp-plan="692318962012" aria-pressed="false"><span class="lp-pkg-t">Alle 6 Wochen</span><span class="lp-pkg-big"><small>rund</small> 130&nbsp;&euro;</span><span class="lp-pkg-u">Ersparnis pro Jahr</span><span class="lp-pkg-bar"><i style="width:33%"></i></span><span class="lp-pkg-n">Etwa 8&ndash;9 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
+          <button type="button" class="lp-pkg" data-lp-plan="692319322460" aria-pressed="false"><span class="lp-pkg-t">Alle 2 Wochen</span><span class="lp-pkg-save">Du sparst</span><span class="lp-pkg-big">390&nbsp;&euro;</span><span class="lp-pkg-u">pro Jahr</span><span class="lp-pkg-bar"><i style="width:100%"></i></span><span class="lp-pkg-n">26 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
+          <button type="button" class="lp-pkg lp-pkg-best" data-lp-plan="692303823196" aria-pressed="true"><span class="lp-flag">Am beliebtesten</span><span class="lp-pkg-t">Alle 4 Wochen</span><span class="lp-pkg-save">Du sparst</span><span class="lp-pkg-big">195&nbsp;&euro;</span><span class="lp-pkg-u">pro Jahr</span><span class="lp-pkg-bar"><i style="width:50%"></i></span><span class="lp-pkg-n">13 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
+          <button type="button" class="lp-pkg" data-lp-plan="692318962012" aria-pressed="false"><span class="lp-pkg-t">Alle 6 Wochen</span><span class="lp-pkg-save">Du sparst</span><span class="lp-pkg-big"><small>rund</small> 130&nbsp;&euro;</span><span class="lp-pkg-u">pro Jahr</span><span class="lp-pkg-bar"><i style="width:33%"></i></span><span class="lp-pkg-n">Etwa 8&ndash;9 Lieferungen im Jahr</span><span class="lp-pkg-p"><s>89&nbsp;&euro;</s> 69&nbsp;&euro; pro Glas</span></button>
           </div>
         <p class="lp-note" style="margin:0">Ein Glas enth&auml;lt 30 Portionen. W&auml;hle den Rhythmus passend zu deinem Verbrauch.</p>
         <!-- straight to checkout with the chosen rhythm (Niklas 2026-11-02); the script swaps selling_plan -->
